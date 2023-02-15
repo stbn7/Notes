@@ -1,0 +1,34 @@
+ 
+Ajax
+Asynchronous JavaScript And XML
+Trabaja en el objeto XMLHttpRequest
+Crea una instancia del objeto, abre una URL, y envia la solicitud.  El estatus HTTP y el contenido del resultado, estan disponibles en el objeto cuando se termina la transacción. Realiza consultas al servidor en segundo plano, sin recargar la página web.
+
+const value_name = new XMLHttpRequest();  -> Crea una instancia del objeto XMLHttpRequest en una página web.
+
+xhttp.open('GET','file.json',true); -> Accede a través del método 'GET' al archivo file.json de forma asíncrona.
+
+/
+Template
+ $.ajax({
+	data:
+	type:valor,
+	datatype:valor,
+	url:" "
+});
+
+Url: Dirección a la que conectamos.
+Type: puede ser GET/POST
+data: Datos enviados al servidor, en formato de url ?clave = valor
+dataType: tipo de dato devuelto por el servidor (html, json, etc)
+success: Calback (o función anónima) que se ejecuta cuando termina el llamado sin errores.
+Error: Calback que se ejecuta cuando termina el llamado con errores, porque la url no es válida, o el JSON no está bien formateado por ejemplo.
+
+
+Los objetos FormData 
+Permiten compilar un conjunto de pares clave/valor para enviar mediante XMLHttpRequest. Destinados principalmente para el envío de los datos del formulario, pero se pueden utilizar de forma independiente con el fin de transmitir los datos tecleados.
+
+var formData = new FormData(); -> Construye e instancia un objeto  tipo FormData.
+FormData.append("clave","valor"); ->  El valor del campo puede ser un Blob, File, o una cadena de texto; si no será convertido a un string.
+
+

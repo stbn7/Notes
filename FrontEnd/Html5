@@ -1,0 +1,255 @@
+Html5
+HyperText Markup Language
+
+ HTML es un "Lenguaje conocido universalmente y que permite publicar información de forma global" W3C.
+cuyas normas define un organismo sin ánimo de lucro llamado World Wide Web Consortium.
+
+El proceso de indicar las diferentes partes que componen la información se denomina marcar (markup en inglés). 
+Cada una de las palabras que se emplean para marcar el inicio y el final de una sección se denominan etiquetas.
+
+¿Qué es HTML?
+
+HTML es un lenguaje de marcado para la descripción de documentos web (páginas web).
+
+     HTML significa HyperText Markup Language.
+     Un lenguaje de marcas es un conjunto de etiquetas de marcado.
+     Los documentos HTML son descritos por las etiquetas HTML.
+     Cada etiqueta HTML describe diferentes contenidos documento
+
+Un pequeño documento HTML:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<h1>Mi primer encabezado</h1>
+<p>Mi primer párrafo.</p>
+</body>
+</html>
+
+Ejemplo Explicación
+
+     La declaración DOCTYPE define el tipo de documento para HTML.
+     El texto entre <html> y </ html> describe un documento HTML.
+     El texto entre <head> y </ head> proporciona información sobre el documento.
+     El texto entre <title> y </ title> ofrece un título para el documento.
+     El texto entre <body> y </ body> describe el contenido de la página visible.
+     El texto entre <h1> y </ h1> describe un título.
+     El texto entre <p> y </ p> describe un párrafo.
+
+Usando esta descripción, un navegador web puede mostrar un documento con un encabezado y un párrafo.
+
+Etiquetas HTML
+
+Etiquetas HTML son palabras clave (nombres de etiqueta) rodeadas por paréntesis angulares:
+
+<tagname> contenido </ tagname>
+
+     Etiquetas HTML normalmente vienen en pares como <p> y </p>.
+     La primera etiqueta en una pareja es la etiqueta inicial, la segunda etiqueta es la etiqueta de cierre.
+     La etiqueta final se escribe igual que la etiqueta inicial, pero con un slash antes del nombre de la etiqueta.
+
+Navegadores web
+
+El propósito de un navegador web (Chrome, IE, Firefox, Safari) es leer los documentos HTML y mostrarlos.
+El navegador no muestra las etiquetas HTML, pero las utiliza para determinar cómo mostrar el documento:
+
+
+El <! DOCTYPE> Declaración
+
+El <! DOCTYPE> Declaración de ayuda del navegador para mostrar una página Web correctamente.
+
+Hay diferentes tipos de documentos en la web.
+
+Para mostrar un documento correctamente, el navegador debe conocer tanto el tipo y la versión.
+
+La declaración DOCTYPE no distingue entre mayúsculas y minúsculas. Todos los casos son aceptables:
+
+<!DOCTYPE html>
+
+<!DOCTYPE HTML>
+
+<!doctype html>
+
+<!Doctype Html>
+
+
+
+ETIQUETAS ESTRUCTURALES DE HTML5
+
+<!DOCTYPE html> Es un DOCTYPE mucho más simple que XHTMl, define que un documento es Html.
+
+<HEADER> Está diseñada para ubicar nuestra cabecera.
+
+<NAV> Está diseñado para que coloques los botones de navegación de tu sitio. Recomendación usar listas.
+
+<SECTION> Define un área de contenido única dentro del sitio. En un blog, sería la zona donde están todos los posts.
+
+<ARTICLE> Define zonas únicas de contenido independiente. En un blog, cada post sería un article.
+
+<ASIDE> Cualquier contenido que no esté relacionado directamente con la misión de la página va en un aside. 
+        En un blog, obviamente el aside es la barra lateral de información.
+        
+<FOOTER> Es el pie de página y todo lo que lo compone.
+
+
+ETIQUETAS HTML5.
+
+<!DOCTYPE HTML> Informa al ordenador que este es un archivo escrito en lenguaje Html y que lo interprete como tal.
+<HEAD> Cabecera de la página.
+<TITLE> Nombre de la página Web.
+<LINK REL="STYLESHEET" HREF="Ubicación del documento.CSS" />
+<LINK> Se utiliza para definir "hojas de estilo" externas.
+<STYLE> Define "hojas de estilo internas".
+<HREF> Inserta la dirección donde está ubicado una plantilla,imágen,texto...
+
+
+METATAGS
+
+<META> Introduce metadatos, información sobre la página...
+<META CHARSET="UTF-8"/> Indica la codificación de caracteres especiales. UTF-8 Muestra prácticamente todos los caracteres del planeta.
+<META NAME="DESCRIPTION" CONTENT=> Descripción de la Web (160 caracteres aprox) Aparece debajo del título del buscador.
+<META NAME="KEYWORDS" CONTENT=> Palabras claves para que localizen nuestra página.
+
+<BODY> Cuerpo de la página Web.
+<H1> Encabezados, soporta hasta 6...
+<P> Crea Párrafos.
+<EM> Emphasize, enfatizar Texto importante cursiva.
+<STRONG> Fuerte, Texto importante en Negrita.
+<MARK> Resalta el texto.
+</BR> Saltos de línea.
+<HR> Crea una linea horizontal.
+<PRE> Preformated. conserva los espacios y lineas del texto.
+<Q> Insertar citas.
+<BLOCKQUOTE> Citas largas.
+<ADDRESS> Inserta la información de contacto (autor / propietario) de un documento o artículo.
+
+<!-Comment-> Agrega comentarios.
+
+CREAR ENLACES,VINCULOS...
+
+<A HREF=> </A> Inserta Hipertexto, links, urls o vinculos.[../] para carpetas superior en el árbol.
+TARGET="_BLANK" Forza abrir el enlace en una nueva pestaña.
+"MAILTO: Enviar correos.
+<ID="mi­ancla"> Nombre del ancla.
+<HREF="#mi­ancla">  Ir al ancla </A>.
+
+
+CREAR LISTAS.
+
+<UL> <LI> </UL> Unorderer List, Crea listas no ordenadas.
+<OL> <LI> </OL> Orderer List, Crea listas ordenadas, enumeradas.
+
+
+INSERTAR IMÁGENES
+
+<IMG/> Imágen
+<IMG SRC=> Insertar imágen.
+<ALT=> Inserta texto descriptivo imagen cuando no se carga.
+<FIGURE> Inserta una imágen con sentido.
+FIGCAPTION= Da una descripción de la imagén. Usar con <FIGURE>.
+
+ETIQUETAS DE DISEÑO llEVAN EL ATRIBUTO CLASS. <SPAN CLASS=>
+
+<SPAN>"Colorea texto".
+<DIV> Salto de linea.
+
+CREAR TABLAS.
+
+<TABLE> Etiqueta para crear tablas.
+<CAPTION> Agrega un título sobre la tabla.
+<TR> Table rows, Filas de la Tabla.
+<TD> Table data cells, Datos de la Tabla.
+
+AUDIO
+
+<AUDIO> Inserta audio en la web site.
+<AUDIO SRC> Enlaza al archivo de audio que queremos reproducir.
+<CONTROLS> Implementa los controles del reproductor por defecto del navegador como, botón play – pause, seek y volumen.
+<AUTOPLAY> Reproduce el archivo de audio desde que se carga la página.
+<PRELOAD> Carga un poco el archivo de audio antes de iniciar la reproducción en el buffer para que no se trabe por reproducir más de lo que carga.
+
+VIDEO
+
+<VIDEO SRC> Enlaza el archivo de video que queremos reproducir.
+<WIDTH> Define el ancho del video en pixeles.
+<HEIGHT> Define la altura del video en pixeles.
+<CONTROLS> Implementa los controles del reproductor por defecto del navegador como, botón play-pause, seek y volumen.
+<AUTOPLAY> Reproduce el archivo de video desde que se carga la página.
+<PRELOAD> Nos carga un poco el archivo de video antes de iniciar la reproducción en el buffer para que no se trabe por reproducir mas de lo que carga.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+xxxxxxxxxxxxx
+LISTAS
+<TYPE=CIRCLE,SQUARE,DISK> Cambian el icono de viñetas de la lista.
+<OL> , <LI> Orderer List, Listas ordenadas ennumeradas.
+<TYPE=1,a,A,i,I> Cambian la enumaración de la lista.
+<LI VALUE=1> Cambie el valor de la enumeración.
+<START=> Inicia o reinicia la enumeración.
+<DL> , <DT>, <DD> Definition List, Definition Term, Definition descriptión.
+
+Etiquetas para crear Formularios.
+
+<FORM>
+<INPUT TYPE="TEXT;SUBMIT,PASSWORD,RADIO,CHECKBOX,IMAGE,RESET,FILE,HIDDEN"> Según el Form
+<VALUE> Eepecifica el texto por default del botón de envió.
+<NAME> Da nombre a los botones para que el servidor distinga cual envair.Nombre del grupo.
+<SIZE> Limita el número caracteres a introducir.
+<MAXLENGTH> Límita el número de caracteres dentro de la caja.
+<ALING="TOP,BOTTOM,LEFT,MIDDLE" Alinea la caja.
+<CHECKED> Botón de Elección este Checked.
+<SRC> Insertar imagen
+<TEXTAREA> Inserta cajas multilenas.
+<NAME> Nombre asignado a la caja multilinea.
+<ROWS> Número de lineas en la caja.
+<COLS> Número de caracteres en cada linea.
+<WRAP="OFF,SOFT,HARD"> Permite configurar la linea dentro de la caja.
+<SELECT NAME> <OPTION> </SELECT> Crear menús desplegables.
+<SELECTED> Seleciona un valor por default del menú.
+<SIZE> Muestra el número de objetos del menú.
+<MULTIPLE> Permite selecionar varias opciones.
+
+ENVIAR Y RECIBIR DATOS DEL FORMULARIO.
+
+<FORM METHOD="GET,POST"> Cómo se envian estos datos.
+<FORM ACTION> Permite añadir la dirección CGI o correo donde serán enviados los datos del formulario.
+<ENCTYPE="TEXT/PLAIN,MULTIPART/FORM-DATA">Permite cambiar el tipo de codificación.
+
+
+<HR> Dibuja una linea horizontal en la pagina Web.
+
+OTRAS ETIQUETAS.
+
+<CENTER> Centrar.
+<DIV ALIGN="CENTER;RIGHT,LEFT"> Alinea cualquier etiqueta.
+
+
+
+
+
+
+
+
+
+
+
+

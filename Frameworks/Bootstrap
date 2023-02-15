@@ -1,0 +1,97 @@
+Bootstrat
+Css3 Framework
+
+La instalación se hace descargando la plantilla de css en tu proyecto o  a través de BootstrapCDN.
+
+Grid
+
+container  -> Crear un contenedor y centra los elementos.
+container-fluid ->
+
+row -> Define al contenedor principal, que el contenido se va organizar por filas.
+col-file-value ->  Define el alto y ancho de las filas, donde value es un numero del 1 al 12.
+col-xs-value ->  extrasmall. 
+col-sm-value -> small.
+col-md-value -> medium.
+col-lg-value -> large.
+
+
+justify-content-center -> Centrar los elementos de un menú. 
+justify-content-end -> Centrar los elementos de un menú al final de una página.
+justify-contend-between -> Coloca un espacio entre los elementos. 
+
+
+
+
+
+Tipografía
+
+text-center -> Centra el texto.
+text-right ->  Posiciona el texto hacia la derecha.
+text-left -> Posiciona el texto hacia la izquierda.
+text-justify -> Justifica un bloque de texto.
+
+Imágenes
+
+img-fluid -> Convertir las propiedades de una imagen en responsiva.
+float-left -> Alinear una imagen hacia la izquierda.
+float-right -> Alinear una imagen hacia la derecha.
+img-thumbnail -> Dar un borde blanco a las imágenes.
+rounden -> Dar bordes a una imágen.
+
+Tablas
+
+table -> Dar formato y estilos predeterminados a una tabla.
+table-hover -> Dar efecto hover a los elementos de una tabla.
+table-striped -> Resaltar las columnas de la tabla de forma intercalada.
+table-bordered -> Añadir un borde a las filas de la tabla.
+thead-dark -> Colorear encabezado de un tabla.
+thead-light -> Colorear encabezado de un tabla.
+table-dark -> Colorear la tabla de negro.
+
+Botones
+Incluye varios estilos de botones predefinidos, cada uno con su propio propósito semántico, con algunos extras para mayor control.
+
+btn -> Dibujar un botón sin formato.
+btn-Primary -> Dibujar un botón de color azul
+btn-Secondary -> Dibujar un botón de color gris.
+btn-Success -> Dibujar un botón de color verde.
+btn-Danger -> Dibujar un botón de color rojo.
+btn-Warning -> Dibujar un botón de color amarillo.
+btn-Info -> Dibujar un botón de color azul claro.
+btn-Light -> Dibujar un botón de color claro.
+btn-Dark -> Dibujar un botón de color oscuro.
+btn-Link -> Dibujar un botón con resaltado.
+
+btn-outline-* -> Dibujar un botón sin relleno, donde * es un color semántico.
+btn-block -> Botón que ocupa todo el ancho de su contenedor.
+btn-lg o btn-sm -> Para tamaños adicionales.
+active -> Muestra un botón con el valor activo.
+disabled -> Muestra un botón con el valor inactivo.
+
+Cards
+Las tarjetas de Bootstrap proporcionan un contenedor de contenido flexible y extensible con múltiples variantes y opciones.
+
+card-body -> Crear un bloque de construcción de un card.
+h1 card-title -> Crear un titulo para el card.
+h2 card-subtitle  -> Crear un subtitulo para el card.
+
+Carousel
+Collapse
+Modal
+Tooltip
+Dropdown
+Jumbotron
+Masonry
+
+Menus
+
+nav -> Formatear los elementos de una lista a los estilos por default de bootstrap, va en la etiqueta ul.
+nav-item -> Indicar los elementos usados por un menú, va en la etiqueta li.
+nav-link -> Especifica los link del menu , va en la etiqueta a.
+nav-pill -> Formatear los elementos de una lista con un poco más de padding, va en la etiqueta ul junto a nav.
+flex-column -> Crear menus verticales.
+active -> Mostrar un elemento como activo.
+nav-justified + nav-fill -> Crear menus que toman todo el espacio disponible de un página.
+
+

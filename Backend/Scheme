@@ -1,0 +1,178 @@
+Scheme
+Functional language
+
+Paradigma funcional
+
+Resumen de las características principales:
+
+    La computación se realiza mediante la evaluación de expresiones
+    Definición de funciones
+    Funciones como datos primitivos
+    Valores sin efectos laterales, no existen referencias a celdas de memoria en las que se guarda un estado modificable
+    Programación declarativa (en la programación funcional pura)
+
+
+#lang scheme, racket --> Indica el lenguaje a programar
+(check-expect (function parameters) result) -> Comprueba ejemplos de la función.
+
+; comment --> Comentarios de una linea
+#| comment |# --> Comentarios multilinea 
+
+Number Functions
+number -> complex -> real -> rational -> integer -> zero -> infinite -> finite -> negative -> positive -> even -> odd -> sqr -> expt -> sin 
+
+(floor x) --> Devuelve el entero más grande no mayor que x. 
+(ceiling x) --> Devuelve el entero más pequeño no menor que x.
+(truncate x) --> Devuelve el entero más cercano a x cuyo valor absoluto no es mayor que el valor absoluto de x.
+(round x) -->  Devuelve el entero más cercano a x, redondeado.
+
+(max a b c) --> Compara y muestra el número más grande.
+(random x y) --> Genera números aleatorios de x hasta y.
+(remainder x y) --> Muestra el residuo de la división de dos números.
+(quotient x y) --> Muestra el cociente de la división de dos números.
+(expt x y) -> Potencia de un numero elevado a la y veces.
+
+String Functions
+(string-append "text1" "text2") --> Une cadenas de texto de tipo string.
+(string-length "text") --> Calcula el numero de carácteres  de un string.
+(printf  parameters) --> Imprime valores en pantalla.
+
+Definitions
+(define name value) --> Asocia un valor a un identificador global.
+(define (name parameters) (function)) --> Define una función propia   con parámetros.
+(let ([name value])) --> Crea funciones con identificadores locales (scope).
+(local ((define (parameters) (function)) -> Crear funciones locales. Funciona como una expresión.
+( value (local ((define (parameters) (function))) -> Crear funciones locales dentro de una variable.
+((lambda (parameters) (function)) value) --> Crea funciones anónimas.
+(set! definition_name) -> Permite modificar el valor de una variable
+
+
+Conditional
+
+(if (condition) #t #f) --> Examina una condición y devuelve un valor lógico.
+(cond [condition1 (value1)] [condition2 (value2)][else value3)]) --> Examina condiciones múltiples.
+
+
+Data Structure
+
+List
+Una lista es un grupo de elementos compuesta por el primer elemento y una lista los elementos restantes.
+
+(cons value empty) --> Crea un elemento de una lista.
+(list  value1 value2 value3) --> Crea listas de datos.
+(append list1 list2) --> Concatena listas de datos.
+(first list) --> Muestra el primer elemento de una lista.
+(rest list) -->  Muestra el resto de elementos de una lista.
+(length list) --> Obtiene el largo de una lista.
+(reverse list) --> Invierte los elementos de una lista.
+(list-ref list x) --> Devuelve el elemento en la posición x de una lista.
+(filter function list) --> Muestra.. los elementos de la lista que cumplan con la función predicado.
+(map function list) --> Aplica una función a cada elemento de una lista y devuelve la lista.
+(member x list) --> Busca x en una lista, si está devuelve la lista desde la posición x
+
+Struct
+
+(define-struct name (parameter1 parameter2) --> Crea estructuras compuestas.
+(make-struct_name value1 value2) --> Crear y relaciona valores a los parámetros de la estructura.
+(struct_name-parameter name) --> Selecciona un dato especifico de la estructura.
+
+Arrays
+(vector value1 value2 ) --> Crea vectores o arreglos de datos.
+(make-vector n x) --> Crear un vector con n posiciones y todos con el valor de x
+(vector-ref vector x) -->  Devuelve el elemento en la posición x de un vector.
+(vector-length vector) --> Devolver el numero de elementos  de un vector.
+
+Arboles
+Colección de un dato (el valor de la raíz del árbol) y una lista de hijos que también son árboles.
+Una hoja será un árbol sin hijos (un dato con una lista de hijos vacía).
+
+(list node_value left_node right_node) -> Definir un arbol con listas
+(define-struct node (node_value node_left node_right)) -> Definir un arbol con estructuras
+(make-struct nodo (value left right)) -> Crear estructura tipo arbol
+
+(begin (definition1)(definition2)...) -> Permite ejecutar funciones secuencialmente.
+
+(write value) -> Escribir en pantalla.
+(display value) -> Escribir en pantalla
+
+Graphics
+(empty-scene width hight) --> Crea una escena vacía, es decir, un rectángulo blanco con un contorno negro.
+(place-image image x y scene) --> Imprime una imagen dentro de escena con su centro en las coordenadas (x, y).
+
+Basic Images 
+(require 2htdp/image)
+
+(circle radius mode color) -> Construye un circulo con el radio, modo y color dados.
+(ellipse width height mode color) -> Construye un elipse con el ancho, la altura, el modo y color dados.
+(line x1 y1 pen-or-color) -> Construye una linea.
+(rectangle width height mode color) → Construye un rectángulo con el ancho, la altura, el modo y color dados.
+(square side mode color) → Construye un cuadrado.
+(text string font-size color) -> Construye una imagen a base de un string.
+
+
+Image Predicates
+
+(above imagen1 imagen2 imagen2...) -> Construye y alinea una fila vertical todos sus elementos.
+(beside imagen1 imagen2 imagen2...) -> Construye y alinea una fila horizontal, alineadas a lo largo de sus centros.
+(overlay imagen1 imagen2 imagen2...) -> Construye y sobrepone todas las imágenes alineadas a lo largo de sus centros.
+(underlay imagen1 imagen2 imagen2...) -> Construye una sola imagen con todos sus argumentos.
+
+(image-height imagen) -> Calcula la altura de una imagen.
+(image-width imagen) -> Calcula el ancho de una imagen.
+
+mode?  'solid or  'outline -> Imprime el modo en pantalla, solido o contorno
+
+
+
+Worlds and the Universe 
+(require 2htdp/universe)
+
+(big-bang state-expr clause ...)  --> Construye mundos interactivos, donde state-expr es el estado inicial y clause manejador de eventos.
+
+clause   (on-tick tick-expr)
+ 	     (on-tick tick-expr rate-expr)
+ 	     (on-tick tick-expr rate-expr limit-expr)
+ 	     (on-key key-expr)
+ 	     (on-pad pad-expr)
+ 	     (on-release release-expr)
+ 	     (on-mouse mouse-expr)
+ 	     (to-draw draw-expr)
+ 	     (to-draw draw-expr width-expr height-expr)
+ 	     (stop-when stop-expr)
+ 	     (stop-when stop-expr last-scene-expr)
+ 	     (check-with world?-expr)
+ 	     (record? r-expr)
+ 	     (close-on-stop cos-expr)
+ 	     (display-mode d-expr)
+ 	     (state expr)
+ 	     (on-receive rec-expr)
+ 	     (register IP-expr)
+ 	     (port Port-expr)
+ 	     (name name-expr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

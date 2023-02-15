@@ -1,0 +1,163 @@
+Java
+
+
+Library
+import java.math.*; Libreria que contiene operaciones matématicas.
+import java.util.Scanner;  Libreria para usar scanner.
+import javax.swing.*; Libreria para interfaces gráficas.
+import java.util.Arrays; Libreria que contiene manejo de vectores.
+import java.util.ArrayList; Libreria permite manejo de arrrayList
+
+
+Method
+System.out.print("value"); Imprime por pantalla el valor entre los parentesis.
+System.outprintln("value"); Imprime por pantalla el valor entre los parentesis con salto de linea.
+Scanner object_name = new Scanner(System.in); Invocar la clase para leer datos en pantalla
+toString()
+value = object_name.nextInt(); Toma el valor
+
+Condicionales
+if (condition){ true } else {false} Estructura de control, que ejecuta una instrucción dependiendo del resultado de la evaluación.
+switch(value){ case 1: break; case 2: break; default:} Ejecuta una condición segun el valor.
+while(condition){code}  Repite un bloque de instrucciones, mientras se cumpla la condición.
+do{code}while(condition); Repite el bloque de instrucciones, mientras se cumpla la condición.
+
+Ciclos
+for(int i=0 ; value<i ; i++){} Ejecuta un bloque de instrucciones hasta que se cumpla una condicion.
+
+
+Array
+type [] name = new type[x]; Crear un objeto arreglo que contiene x elementos.
+type[] name = {item1, item2, item3}; Inicializar un objeto arreglo con tres elementos.
+name [1] = item1; Agregar valores a la posicion de un arreglo.
+
+Arraylist
+ArrayList<type> name = new ArrayList<type>(); Crear un objeto ArrayList
+ArrayList.add; Agregar un elemento al final del objeto ArrayList.
+ArrayList.clear; Eliminar todos los elementos del objeto ArrayList.
+ArrayList.contains; Devolver true si el objeto ArrayList contiene el elemento especificado;
+ArrayList.get; Devolver el elemento en el índice especificado.
+ArrayList.indexOf; Retornar el índice de la primera ocurrencia del elemento especificado en el
+ArrayList.remove; Eliminar la primera ocurrencia del valor especificado. elemento en el subíndice especificado.
+ArrayList.size; Retornar el número de elementos almacenados en el objeto ArrayList.
+ArrayList.trimToSize; Recortar la capacidad del objeto ArrayList al número actual de elementos.
+
+Vector
+Arrays.sort(v) ordena los elementos del vector.
+Arrays.equals(v1,v2) comprueba si dos vectores son iguales.
+Arrays.fill(v,val) rellena el vector vcon el valor val.
+Arrays.toString(v)devuelve una cadena que representa el contenido del vector.
+Array.copyOf(v) _> Copia un array
+array_name.length Devolver el tamaño de un array.
+
+
+
+Polimorfismo
+public abstract class name{} Crear una clase abstracta
+public abstract void name(); Crear método abstracto. 453
+
+Herencia
+public subclase name extends superclase{} Heredar atributos, métodos y procedimientos de una clase
+Interfaces
+Sólo pueden contener constantes y métodos abstract;
+Los métodos siempre son public y abstract, por lo cual no necesitan declararse;
+
+public interface name {abstract_methods} Definir una interface
+class implements interface_name(): Implementar una interfaz al final de una clase.
+type method_name(); Definir un método abstracto para una interface, puede llevar parametros. 468 10.9.4
+
+Collection
+Set No contiene duplicados.
+List Colección ordenada que puede contener elementos duplicados.
+Map Colección que asocia claves con valores y no puede contener claves duplicadas.
+Queue Colección del tipo primero en entrar, primero en salir, que modela a una línea
+de espera; pueden especificarse otros órdenes.
+
+Patron MVC
+
+Controlador Cerebro
+Vista Presentacion
+Modelo Lógica negocio y  Acceso a datos
+
+
+Creacion de Interfaces
+import javax.swing.*;
+
+JOptionPane.showMessageDialog(null, "text"); Mostrar un mensaje en pantalla centrado.
+JOptionPane.showInputDialog(null, "text"); Capturar un dato.
+
+**ActionListener**
+implements ActionListener Agregar la interface ActionListener a una clase.
+actionPerformed(ActionEvent ae) Clase generada por ActionListener y permite colocar los eventos.
+ae.getActionCommand().equals("Action")
+implements MouseListener Agregar la interface MouseListener a una clase.
+initComponents(); Inicia componentes
+
+
+import java.awt.*;
+
+Importar librerias necesarias y crear una clase que herede JFrame.
+
+Ventana
+this.setSize(width,height) Estable el ancho y  altura de la ventana, int.
+set.Title("name"); Inserta un titulo para la ventana.
+this.setDefaultCloseOperation(EXIT_ON_CLOSE); Cierra la ventana
+this.setResizable(false); No permite redimencionar la ventana.
+set.Visible(true); Muestra o hace visible la ventana.
+
+
+Jpanel - Contenedores
+JPanel name = new JPanel(); Crear un contenedor.
+this.getContentPane().add(name, BorderLayout.center); Agregar contenedor con BorderLayout center.
+name.setBackground(Color.blue); Cambia a azul el color del contenedor.
+panel.setBounds(x, y, width, height) Ubicar un panel border layout, en la ventana
+
+JLabel - Etiqueta 
+JLabel name = new JLabel()  Crear una etiqueta.
+name.setText("Value"); Dar valor a la etiqueta.
+container.add(name); Agregar etiqueta.
+name.setBounds(x, y, width, height) Ubicar la etiqueta dentro del contenedor.
+name.setForeground(Color.blue); Cambia el color de la etiqueta a azul.
+name.setFont (new Font("Arial", Font.Bold, size)); Cambiar tamaño de fuente.
+
+JButton - Botones
+JButton name = new JButton(); Crear Botón.
+name.setBounds(x, y, width, height) Ubicar el botón dentro del contenedor.
+container.add.Button(name)
+
+Agregar método de Eventos() Agregar addWindowsListener Agregar Eventos
+addWindowListener(new java.awt.event.WindowAdapter(){} Escucha eventos de la producidos en la ventana.
+button_name.addMouseListener(new MouseInputListener(){}
+
+public void windowClosing(java.awt.event.WindowEvent evento){System.exit(0);} Evento que permite cerrar la ventana.
+
+
+Templates
+public class class_name{functions}  Crear una clase con acceso público.
+clase_name object_name = new clase_name(); Crear un objeto que hereda todos los atributos de la clase asignada.
+
+Hilos (Threads)
+public class class_name extends Thread
+
+
+
+
+MVC
+vista
+importar clases vista en la clase principal
+instaciar clases vista
+crear metodos set y get con parametros de la vista
+
+actionPerformed
+instancio contralador
+llamos a ls set pasando this
+cont.setnombre(this);
+
+control
+importa las vistas Objeto objeto;
+set y get de las vistas
+
+metodos que llaman los model
+model.setnombre(controlador.getNombre)
+
+

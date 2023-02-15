@@ -1,0 +1,56 @@
+
+Installation
+
+Virtualenv
+pip3 install virtualenv -Instalar entorno virtual
+virtaulenv name -Crear entorno virtual
+source name/bin/activate -Activar entorno virtual
+
+Dotenv
+pip3 install python-dotenv -Libreria que genera variables de Entorno
+make .env  -Crear archivo para almacenar variables de Entorno
+
+config= dotenv_values('.env') -Cargar variables de Entorno
+if __name__ == '__main__': app.run(host='localhost', port=config["PORT"], debug=True) -Ejecuta Dotenv con variables de Entorno
+
+PORT=3000 -Agregar puerto
+URL_DB= url db
+
+
+PyMongo
+pip3 install pymongo -Libreria para el manejo de MongoDB
+pymongo.MongoClient(config['URL_DB'])
+
+Flask
+pip3 install Flask Instalar Flask dentro del entorno virtual
+pip3 install flask_cors
+
+Library
+from flask import jsonify Libreria que convierte datos en json y retorna un codigo de estado
+from flask_cors import CORS cors = CORS(app) Habilita
+
+
+
+
+Crear los folder necesarios Controllers, Models, Routes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

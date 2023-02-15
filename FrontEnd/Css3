@@ -1,0 +1,164 @@
+Css3
+Cascading Style Sheets
+
+La idea que se encuentra detrás del desarrollo de CSS es separar la estructura 
+de un documento de su presentación. Gestiona el diseño de un sitio Web.
+
+Una hoja de estilos consiste en una serie de reglas compuesta de tres partes que son selectores, propiedades y atributos.
+
+Selectores: Cada selector marcará que elementos son afectados por cada bloque de estilos que se siga, afectando uno o 
+varios elementos a la vez, en función de su tipo, nombre (name, ID, clase (class), o document object model.
+
+Propiedades: Son los elementos con los que vamos asignarle un valor para comenzar a interactuar logrando así nuestro estilo deseado.
+
+Atributos:Forman parte de las propiedades y colaboran con la definición de las mismas.
+
+Selector
+{
+     propiedad: valor;
+}
+
+Para colocar un propiedad a varias etiqueta solo hay que separar por una coma:
+h1, em
+
+/*Comment*/ --> Agregar comentarios multilinea. 
+
+<P,H1,IMG CLASS=> <P,H1,IMG/> Etiqueta HTML que Identifica un texto.
+.Tags Name Código CSS para identificar la etiqueta CLASS del documento HTML.
+
+<ID> Funciona como <Class> pero sirve para identificar textos de mucha importancia.
+# Tags Name Código CSS.
+
+* Selector universal, seleciona todas las etiquetas.
+A B una etiqueta dentro de otra. Selecciona todas las etiq <B>, dentro de la etiq <A>.
+A + Buna etiqueta que sigue a otra. Selecciona la primera etiq <B>, situada despues de la etiq <A>.
+
+CÓDIGOS PARA DAR FORMATO AL TEXTO:
+
+FONT-SIZE: 16px; Tamaño a fuente en pixeles(px),centimetros(cm),Milimetros(ml).
+FONT-SIZE: VALUE; Cambia el tamaño de fuente, hay 7 valores: xx-small,x-small,small,medium,large,x-large,xx-large.
+
+FONT-FAMILY:VALUE; Cambia el tipo de letra.Si la fuente lleva espacios en blanco se debe colocar entre comillas "Comic Sans"
+FONT-STYLE:ITALIC,OBLIQUE,NORMAL; Permite cambiar el texto a cursiva,oblique y normal respectivamente.
+FONT-WEIGHT:BOLD,NORMAL; Cambia el texto por negrita.
+TEXT-DECORATION:UNDERLINE,LLINE-THROUGH,OVERLINE,BLINK,NONE;decora el texto.subrayado,cruzado,línea encima, intermitente.normal (por defecto).
+TEXT-ALING:CENTER,RIGHT,LEFT,JUSTIFY; Alinea el texto respectivamente.
+FLOAT="LEFT,RIGHT" Permite "Flotar" imágenes, para escribir texto alrededor.
+CLEAR="LEFT,RIGHT,BOTH" "Este texto debe estar por debajo del float y no al lado"
+
+CÓDIGOS FONDO Y COLOR:
+
+BACKGROUND-COLOR; Permite cambiar el color de fondo de la página, opera desde la etiqueta <Body>
+BACKGROUND-IMAGE:URL(); Elige una imagen de fondo.
+­BACKGROUND-ATTACHMENT­:FIXED,SCROLL; La imágen de fondo se mantiene fija o "se mueve" detras del texto.
+­BACKGROUND­-REPEAT,NOREPEAT,REPEATX,REPEATY;Repetición del fondo del mosaico.
+no­repeat: el fondo no se repite. La imagen será única en la página.
+repeat­x: el fondo se repetirá sólo en la primera línea, horizontalmente.
+repeat­y: el fondo se repetirá sólo en la primera columna, en posición vertical.
+repeat: el fondo se repetirá en mosaico (por defecto).
+­BACKGROUND-POSITION:TOP,BOTTOM,RIGHT,LEFT Posición de fondo.
+OPACITY:0 y 1; Da transparencia a una imagén, donde 0 es totalmente transparente.
+BACKGROUND-SIZE:VALUE; Modifica el tamaño de una imágen.
+
+Bordes y Sombras
+
+BORDES= Ancho+color+tipo de borde.
+
+BORDER:NONE; Crea bordes.
+none: sin bordes (por defecto);
+solid: una sola línea;
+dotted: puntos;
+dashed: trazos;
+double: doble contorno;
+groove: en relieve;
+ridge: otro efecto en relieve;
+inset: efecto 3D global deprimido;
+outset: efecto 3D global resaltado.
+
+BORDER:TOP,RIGTH,LEFT,BOTTOM; Define el lado del borde.
+BORDER-RADIUS:;  Crar bordes redondos x pixeles.
+
+Posicionamiento
+Especifica cómo un elemento es posicionado en el documento.
+Las propiedades de desplazamiento top, right, bottom, y left determinan la ubicación final de los elementos.
+
+position: static; --> El elemento es posicionado de acuerdo al flujo normal del documento. Las propiedades de desplazamiento no tienen efecto.
+position: relative; --> Sus propiedades de desplazamiento son válidas desde su posición original.
+position: absolute; --> Sus propiedades de desplazamiento son válidas desde los bordes del bloque contenedor del elemento más cercano.
+position: fixed; --> Sus propiedades de desplazamiento son válidas con relación al bloque contenedor inicial establecido por el viewport.
+position: sticky; --> Sus propiedades de desplazamiento son válidas.
+
+Transformaciones
+Manipulan el sistema de coordenadas de un elemento. Usándola, los elementos pueden ser trasladados, rotados, escalados o sesgados.
+
+transform: value;
+
+translate(x, y);  --> Transladar un elemento a la posición de una coordenada especifica. Usa pixeles o porcentajes.
+translate(x); --> Transladar un elemento en el eje x.
+translate(y); --> Translada un elemento en el eje y.
+scale(value); --> Incrementar el tamaño del elemento en la dirección de los dos ejes.
+scaleX(value); --> Incrementar el tamaño del elemento sobre el eje x.
+scaleY(value); --> Incrementar el tamaño del elemento sobre el eje y.
+skew(deg); --> Sesgar el elemento a lo largo de los dos ejes. Usa grados.
+skewX(deg); --> Sesgar un elemento a lo largo del eje X.
+skewY(deg); --> Sesgar un elemento a lo largo del eje Y.
+rotate(deg); --> Rota un elemento en sentido de las macecillas del reloj. Usa grados y turnos.
+rotateX(deg); --> Rota un elemento sobre el eje X.
+rotateY(deg); --> Rota un elemento sobre el eje Y.
+
+Clip-Path
+Crea una máscara que hace que solo se muestra la parte del elemento que nosotros indicamos. https://bennettfeely.com/clippy/
+
+Transiciones
+Conseguir un efecto suavizado entre propiedades iniciales y un propiedades finales.
+
+transition-property: value; --> Especifica la propiedad de css que se quiere animar, Usa all para especificar todas las propiedades.
+transition-duration: value; --> Especifica la duración de la transicion. Usa segundos como valores.
+transition-delay:value; --> Determina el tiempo que tarda la transición en iniciar.
+transition-timing-function:value; --> Permite controlar la aceleración de la transición.
+linear; --> La animación se realiza de manera uniforme.
+ease; --> La animación acelera al inicio se retarda un poco y se acelera al final de nuevo.
+ease-in; --> La animación se retarda al inicio, pero lo repone al final.
+ease-out; -->La animación se acelera al inicio pero se retarda al final.
+ease-in-out: --> La animación se retarda al inicio, se acelera un poco y  se retarda al final.
+cubic-bezier() --> Permite personalizar el retardo de la animación. https://cubic-bezier.com/
+transition: porperty duration delay timing-function; --> Shorthand de la propiedad transition.
+
+Animaciones
+Permite controlar los pasos intermedios en una secuencia de animación mediante el establecimiento de keyframes (o puntos de trayectoria) a lo largo de la secuencia de animación.
+
+@keyframes name {code} --> Contiene una lista de estilo de selectores, cada una de los cuales está compuesto de un porcentaje a lo largo de la animación y un un bloque que contiene la información de estilo para ese keyframe.
+
+from {code} --> Estado inicial de la animación. Equivale a 0%
+to {code} --> Estado final de la animación. Equivale a 100%
+
+animation-name: name; --> Definir el nombre de la animación.
+animation-duration; --> Definir la duración de la animación. Usa segundos.
+animation-iteration-count: value; --> Especifica el numero de veces que se repite la animacion. Usa segundos.
+animation-direction: normal, alternate, reverse; --> Especifica el comportamiento de la animación.
+animation-play-state: paused, running; --> Define el estado de la animación.
+animation-delay:value; --> Determina el tiempo que tarda la animación en iniciar.
+animation-fill-mode: forwards; --> Especificar el estado final de la animación.
+animation-timing-function; --> Permite controlar la aceleración de la animación.
+animation: name duration timing-function delay iteration-count direction fill-mode; --> Shorthand de la propiedad animation.
+
+
+Seudo Clases
+
+:hover --> Cambiar propiedades del elemento cuando el mouse está sobre el elemento.
+:active --> Cambiar propiedades del elemento cuando se da click al elemento.
+:lastchild -->  Definir que un último elemento no sea afectado por una tributo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

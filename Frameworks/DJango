@@ -1,0 +1,287 @@
+Virtual Environments
+
+sudo pip3 install virtualenvwrapper - Instalar entorno virtual
+
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+source ~/.bashrc - Actualizar bash
+
+mkvirtualenv django_project - Crear entorno virtual
+deactivate - Salir entorno virtual
+workon - Listar entornos virtuales disponibles
+workon django_project - Activar entorno virtual
+rmvirtualenv django_project - Borrar entorno
+
+Django
+
+templates - Agregar codigo html
+static - Agregar archivos Css, Imagenes y Js
+
+python3 manage.py runserver - Correr servidor local
+
+pip3 install django - Instalar Django dentro del entorno virtual
+pip3 install djangorestframework
+pip3 install djangorestframework-simplejwt
+pip3 install psycopg2
+django-admin startproject django_project - Crear proyecto
+
+python3 manage.py startapp app_name - Crear aplicacion en django_project
+'app_name.apps.app_nameConfig' - Añadir app en settings.py de django_project
+'rest_framework' - Añadir framework en settings.py de django_project
+
+python3 manage.py makemigrations app_name
+python3 manage.py migrate
+
+Configurar Rest Framework en settings.py
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.AllowAny'),
+    'DEFAULT_AUTHENTICATION_CLASSES':('rest_framework_simplejwt.authentication.JWTAuthentication'),
+}
+
+Configurar Simple JWT para generar tokens y autenticaciones en settings.py
+
+SIMPLE_JWT ={
+'ACCESS_TOKEN_LIFETIME': timedelta(minutes = 5),
+'REFRESH_TOKEN_LIFETIME': timedelta(days = 1),
+'ROTATE_REFRESH_TOKENS': False,
+'BLACKLIST_AFTER_ROTATION': True,
+'UPDATE_LAST_LOGIN': False,
+'ALGORITHM': 'HS256',
+'USER_ID_FIELD': 'id',
+'USER_ID_CLAIM': 'user_id',
+}
+
+Configurar Database en settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydb', Heroku.Database
+        'USER': 'myuser', Heroku.User
+        'PASSWORD': 'mypass', Heroku.Password
+        'HOST': 'localhost', Heroku.Host
+        'PORT': '5432',
+    }
+}
+
+mkdir models, views y serializers - Cada carpeta lleva el archivo __init__.py
+
+Model Template User
+
+from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, PermissionMixin, BaseUserManager
+from django.contrib.auth.hashers import make_password
+
+class UserManager(BaseUserManager):
+    def create_user(self, username,password = None):
+        if not username:
+            raise ValueError('Usuario ya existe')
+        user: self.model(username=username)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, username,password = None):
+        user = self.create_user(username = username,password=password,)
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+
+class User(AbstractBaseUser, PermissionMixin):
+    id = models.BigAutoField(primary_keys=True)
+    username = models.Charfield('Username', max_length=30,unique=True)
+    password = models.Charfield('Password', max_length=256)
+    name = models.Charfield('Name', max_length=100)
+    email = models.EmailField('Email',max_length=256)
+
+    def save(self, **kwargs):
+        some_salt = 'JDaw3ek'
+        self.password = make_password(self.password, some_salt)
+        super().save(**kwargs)
+
+    objects = UserManager()
+    USERNAME_FIELD = 'username'
+
+Model Template Account
+
+from django.db import models
+from .user import User
+
+class Account(models.Model):
+    id = models.BigAutoField(primary_keys=True)
+    user = models.ForeingKey(User,related_name='account', on_delete=models.CASCADE)
+    balance = models.IntegerField(default=0)
+    lastChageDate = models.DateTimeField()
+    isActive = models.BooleanField(default = True)
+
+__init__.py
+
+    from .user import User
+    from .account import Account
+
+Agregar modelos a admin.py
+
+from .models.user import User
+from .models.account import Account
+admin.site.register(User)
+admin.site.register(Account)
+
+AUTH_USER_MODEL = 'app_name.UserM' Agregar modelo a settings.py
+
+Serializers = Controlador
+
+User template
+
+from app_name.models.user import User
+from app_name.models.account import Account
+from app_name.serializers.AccountSerializer import AccountSerializer
+from rest_framework import serializers
+
+class UserSerializer(serializers.ModelSerializer):
+    account = AccountSerializer()
+    class Meta:
+        model = User
+        fields = ['id','username','password','name','email','account']
+
+    def to_representation(self, obj):
+        user = User.objects.get (id = obj.id)
+        account = Account.objects.get (user= obj.id)
+        return {
+            'id': user.id,
+            'username': user.username,
+            'name': user.name,
+            'email': user.email,
+            'account':{
+                'id': account.id,
+                'balance': account.balance,
+                'lastChangeDate': account.lastChangeDate,
+                'isActive': account.isActive
+                }
+            }
+    def create(self, validated_data):
+        accountData = validated_data.pop('account')
+        userInstance = User.objects.create(**validated_data)
+        Account.objects.create(user = userInstance, **accountData)
+        return userInstance
+
+Account template
+
+from app_name.models.account import Account
+from rest_framework import serializers
+
+class AccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Account
+        fields = ['balance', 'isActive', 'lastChageDate']
+
+__init__.py
+
+    from .accountSerializer import AccountSerializer
+    from .userSerializer import UserSerializer
+
+Agregar serializer a admin.py --> posible error
+
+from .serializer.user import User
+from .serializer.account import Account
+admin.site.register(User)
+admin.site.register(Account)
+
+
+View Template User
+
+from rest_framework import status, views
+from rest_framework.response import Response
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from app_name.serializers.userSerializer import UserSerializer
+
+class UserCreateView(views.APIView):
+    def post (self, request, *args, **kwargs):
+        serializer = UserSerializer(data = request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        userData ={"username": request.data['username'],
+                   "password": request.data['password']}
+        token = TokenObtainPairSerializer(data = userData)
+        token.is_valid(raise_exception=True)
+
+        return Response (token.validated_data, static = status.HTTP_201.CREATED)
+
+UserDetail View Template
+
+from django.conf import settings
+from rest_framework import generics, status
+from rest_framework.response import Response
+from rest_framework_simplejwt.backends import TokenBackend
+from rest_framework.permissions import IsAuthenticated
+
+from app_name.models.user import User
+from app_name.serializers.userSerializer import UserSerializer
+
+class UserDetailView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (IsAuthenticated,)
+
+    def get (self, request, *args, **kwargs):
+        token = request.META.get('HTTP_AUTHORIZATION')[7:]
+        tokenBackend = tokenBackend(algorithm = settings.SIMPLE_JWT['ALGORITHM])
+        valid_data = tokenBackend.decode(token,verify = False)
+
+        if valid_data['user_id'] != kwargs['pk']:
+            return Response({'detail':'No esta autorizado'},status = status.HTTP_401_UNAUTHORIZED)
+
+        return super().get(request,*args,*kwargs)
+
+__init__.py
+
+    from .userCreateView import UserCreateView
+    from .userDetailView import UserDetailView
+
+
+Urls - Agregar vistas a urls.py
+
+from app_name import views
+from rest_framework_simplejwt.views import (TokenObtainPairView,TokenRefreshView)
+
+    urlpatterns = [
+        path('login/', TokenObtainPairView.as_view()),
+        path('userCreate/', views.UserCreateView.as_view()),
+        path('user/<int:pk>', views.userDetailView.as_view()),
+        path('refresh/',TokenRefreshView.as_view())
+        ]
+
+import django_heroku Asociar Django a Heroku
+django_heroku.settings(locals())
+
+Procfile Crear archivo que indica a Heroku
+web: gunicorn app_name.wsgi
+
+.gitignore Indicar que archivos
+
+
+requirements.txt Crear archivo de dependencias
+
+django==4.0.6
+djangorestframework==3.13.1
+djangorestframework-simplejwt==5.2.0
+psycopg2==2.9.3
+gunicorn==20.1.0
+django-heroku==0.3.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

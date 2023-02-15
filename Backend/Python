@@ -1,0 +1,118 @@
+Python 3
+Interpreted Programming Language
+
+Creado por el holandes Guido Van Rossum, a finales de la decada de los 80.
+Lenguaje de muy alto nivel, fuertemente tipado
+
+#Comentario Cometarios de una sola linea
+\  Saltar a la linea siguiente
+
+Library
+import modulo Importar modulos o paquetes (clases)
+from modulo import funct  Importar las funciones de un módulo
+
+import this Mostrar el zen de python
+import math Acceder a las funciones del modulo  Math de python
+import random Libreria random
+from math import floor: Importar la función floor
+
+Funciones Integradas (Built-in functions)
+input () Almacenar valores en una variable.
+print("text") Imprimir texto en pantalla.
+type(value) Conocer el tipo de una variable.
+abs(num) Calcular valor absoluto de un número
+ceil(num) Redondear hacia arriba un número
+max(num1,num2) Calcular el valor máximo de un conjunto de números o cadenas.
+min(num1,num2) Calcular el valor mínimo de un conjunto de números o cadenas.
+round(num,2) Redondear los decimales de un números
+floor(num) Redondear hacia abajo un número
+
+int(value) Convertir una variable en un dato de tipo entero.
+
+String
+sep="value" Imprimir un texto despúes de cada valor.
+end="value"  Imprimir un valor al final de una cadena de texto.
+len("value")  Mostrar la longitud de una cadena
+
+Condicionales
+if condition: true else: false -> Evaluar una condicion y devolver una instruccion.
+elif condition: true false -> Crear condicional anidado.
+else: return->  Retornar un valor si no se cumple ninguna condición
+
+Ciclos
+for value in list: code -> Recorrer cada elemento de una lista o cadena.
+for value in list[:]: code -> Hace una copia
+for i in range(5): code -> Iterar en una secuencia de numeros
+
+
+Funciones
+def name():  code Definir funciones
+def name(parameters):  code Definir funciones con parametros
+
+Listas
+value = [item1, item2, item3] ->  Crear listas.
+value[n] -> Mostrar el valor contenido en la posicion N.
+value[n] = x -> Asignar un valor  en la posicion N.
+value.append(x) -> Agregar un valor al final de la lista.
+
+IPOO
+class name: Crear clases
+name = class() Instanciar un objeto
+class.attribut = "value" Agregar attributos a una clase
+def __init__(self, x=0): self.x = x Inicializar atributos a nivel de instancia
+name = class(0,'value') Asignar valores a nivel de instancia
+@classmethod def name(cls): return cls.attribut Crear metodos a nivel de Clase
+def __str__(self): Retornar una cadena de un objeto
+@property def attribut(self): return self.attribut Crear método Get
+@attribut.setter def attribut(self, value): self.attribut = value
+
+Visibilidad
+_name Representa un attribut protegido
+__name Representa un attribut privado
+
+
+
+
+
+
+Interfaces Graficas
+https://docs.python.org/3/library/tk.html
+
+import tkinter Importar modulo tkinter para el manejo de interfaces graficas
+
+window = tkinter.Tk() Crear ventana
+window.title("tittle") Agregar Titulo a la ventanta
+window.geometry("hxa") Configurar Tamaño de la ventana
+txtName = tkinter.Entry(windows) Crear un campo de texto
+txtName.pack() Configurar ubicacion del campo de texto
+btnName = tkinter.Button(window,text="") Crear un boton
+btnCalcular = tkinter.Button(window, text= "", command= lambda: funct) Agregar una funcion recurrente a un boton
+lblName = tkinter.Label(window, text = "") Crear una etiqueta
+
+window.mainloop() Ejecutar ventana en un ciclo
+
+Console
+pip install name -> Instalar paquetes de python
+pip install name -> Desinstalar paquetes de python
+pip show name -> Mostrar la version de un paquete
+pip install -r requerimientos.txt -> Para instalar una lista de paquetes
+
+
+Debugger
+import pdb Acceder a las funciones del modulo Debugger
+pdb.set_trace() Detener el programa y tomar control de la ejecución
+
+
+def main():
+    print("¡Hola, mundo!")
+
+if __name__ == "__main__":
+    main()
+
+if __name__ == "__main__": import sys modulo (int(sys.argv[1]))
+
+
+
+
+
+

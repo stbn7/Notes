@@ -1,0 +1,40 @@
+C Lenguage
+Procedural programming
+
+Basic data types
+
+char id = 'value'; -> Carácteres, reserva 8 byte en memoría y su rango está entre -128 a 127.
+int id = value;  -> Números enteros, reserva 16 byte en memoría y su rango está entre -32768 a 32767.
+float id = value;  -> Números reales (con decimales), reserva 32 byte en memoría y su rango está entre 3.4E-38 a 3.4E+38.
+double = value; -> Números enteros, reserva 64 byte en memoría y su rango está entre 1.7E-308 a 1.7E+308.
+char [] = "value";  -> Cadenas de carácteres.
+void -> sin valores.
+
+Libraries
+#include <stdio.h>  -> Proveé funciones como  manipulación de entradas , salidas y de ficheros. 
+
+File Manipulation
+Ficheros son estructuras  de  datos almacenadas en memoria secundaria.
+
+Sequential files
+
+FILE* file_name; -> Formato para declarar un fichero de texto o binario.
+file_name = fopen (“path”, “mode”); -> Operaciones de escritura y lectura. Mode = write, read, append.
+fclose (file_name); -> Operación de cierre del fichero para liberar parte de la memoria  principal  que  pueda  estar  ocupando.
+
+fputc (‘a’, file_name); ->  Escribe un carácter en el archivo.
+putc (‘a’, file_name); ->  Escribe un carácter en el archivo.
+fputs (“cadena”, file_name); ->  Escibe una cadena de texto en el archivo.
+fprintf (file, "%formato", value); ->  Escribe como texto a un archivo los datos transformando el formato especificado en texto.
+
+
+Input and output handling functions
+
+printf("text %formato",value) -> Escribir datos en pantalla con un formato determinado.
+scanf("%formato",&value) -> Introducir datos desde el teclado con un formato determinado.
+formatos -> %c character value, %s string of characters, %d signed integer, %i signed integer, %f floating point value...
+
+
+/* comment*/ -> Cualquier caracter entre /* y */ son ignorados por el compilador, sirve para generar comentarios.
+
+ 

@@ -1,0 +1,477 @@
+Php
+Hypertext Preprocesso
+
+Servidor Local
+
+Un servidor puede ser un equipo o un programa que responde a peticiones que le hagan.
+
+Existen dos tipos de servidores: Locales y Remotos
+
+Un servidor local se instala por medio de un programa para permitirnos probar y navegar la página web que
+vayamos a crear desde nuestro equipo personal.
+
+Las páginas se acceden siempre mediante una dirección o url, el acceso para navegar en nuestro equipo se conoce como localhost.
+Éste es un nombre reservado que tienen todas las computadoras, router o dispositivo que disponga de una tarjeta de red ethernet para referirse a sí mismo.
+
+El nombre localhost es traducido como la dirección IP 127.0.0.1.
+
+
+PHP
+Acrónimo recursivo de PHP: Hypertext Preprocessor, lenguaje enfocado para el desarrollo web que permite ejecutar scripts, conectarse con bases de datos de MySQL/MariaDB y muchas otras características.
+
+
+ESTRUCTURA PHP
+
+<?php  Código ?>  Indica que el documento es de tipo Php, todo el código va por dentro.
+
+# y // Comment   Permiten hacer comentarios de una sola linea
+/* */ Permite hacer comentarios de varias lineas
+
+echo "text show"; Permite imprimir en pantalla
+
+Variables:
+
+# Contenedores que nos permiten guardar cualquier tipo de dato temporalmente
+# Los nombres de las variables son sensibles a las mayúsculas y minusculas
+# Los nombres de las variables no puede llevar espacios, empezar por números o llevar caracteres especiales
+$variable_name = value; Sintaxis para escribir una variable.
+
+Tipos de datos
+
+# String: Cadena de textos
+# Integer: Numeros enteros
+# Double: Numeros decimales
+# Boolean: Verdadero o falso (true/false)
+# Array: Arreglo
+# Object: Objeto
+# Class: Clase
+# Null: Cuando una variable no se le asignado ningún valor
+
+
+Ejemplos de variables almacenando diferentes tipos de datos
+
+String
+$nombre = "David Esteban";
+
+Entero
+$numero = 7;
+
+Booleano
+$verdadero_falso= true;
+
+Comilllas Sencillas vs Comillas Dobles:
+
+# En las comillas dobles podemos llamar variables, mientras en las sencillas no.
+# Sin embrago usar comillas dobles en ciertas situaciones puede traer problemas de seguridad.
+echo 'text show ' . $variable_name; Imprime en pantalla de forma segura con comillas sencillas.
+
+Constantes
+
+# Nos permite almacenar un valor de forma permanente.
+# Deben ir en mayúsculas.
+define('constant name',value); Almacena una constante y su valor.
+
+Arregloso o Vectores
+
+$array_name = array('value1', 'value2', 'value3'); Permiten almacenar muchos valores en una variables
+$array_name[1] = 'new value'; Modifica o agrega un nuevo valor en la posición 1 del array
+echo $array_name[0]; Imprime en pantalla el valor del array en la posición 0
+
+Arreglos Asociativos
+
+$array_name = array('value1' => 'value', 'nombre' => 'David', 'value3' => 'value' );
+$array_name['value3']= 'value1'; Cambia el dato de value3 por value1
+echo $array_name['nombre']; Imprime en pantalla David.
+
+Arreglos Multidimensionales
+
+$array_name = array(array('value1', 'value2'), array('valuea', 'valueb'), array('valuec', 'valued'); Sintaxis
+echo $array_name[1][0]; Imprime en pantalla el valuea dentro de la posición 1
+
+Contar Arreglos
+
+count (array_name) - 1; Cuenta el numero de elementos de un array y le resta 1
+
+Ciclo Foreach
+
+foreach ($array_name as $value)    recorre el array_name le asigna el valor a $value que esta actualmente, y
+   {                              ejecuta la accion
+      actions
+   }
+
+Funciones para ordenar Arreglos
+
+sort($array_name); Organiza el arreglo alfabeticamente
+rsort($array_name); Organiza el arreglo al revés.
+
+Condicionales:
+
+If
+
+if(condicion == value) { intruccion} Si la condicion se cumple se ejecuta la intruccion.
+
+If-else
+
+if(condicion == value) {intruccion1}else{intruccion2} Si la condicion se cumple se ejecuta la intruccion de lo contrario se ejecuta la instruccion2.
+
+Operadores de Incremento/Decremento
+
+++$ ++$ Incrementa la variable en uno
+--$ $-- Resta la variable en uno
+
+Operadores de Cadena
+
+. Permite unir dos variables o cadenas de texto
+.= Une dos cadenas de texto de la misma variable
+
+Switch
+
+$value = 'value1'
+
+switch(&value)
+{
+    case 'value1':
+	echo 'instruction';
+	break;
+	case 'value2':
+	echo 'instruction';
+	break;
+}
+
+El caso sigue la instruccion según la variable switch
+
+Ciclo For
+
+for ($i = valor_inicial ; $i = condicion_parada ; $i incremento)
+{
+   Bloque de instruccion
+}
+
+Ciclo While
+
+$x = number;  Variable externa
+
+while($x <= condición_parada){
+      instruccion;
+	  $x++;
+}
+
+Ciclo Do While
+
+$i = number; varibale externa.
+
+do{
+     Instruccion
+	 $i++;
+}while($i = condicion_parada);
+
+Sentencia Break y Continue
+
+Break Termina la instruccion de un ciclo
+Continue Omite y permite saltar a la siguiente instruccion de un ciclo
+
+Funciones de información
+
+gettype($variable_name) Permite saber el tipo de dato de la variable
+
+var-dump ($variable_name) Permite saber el tipo de dato de una variable
+
+print_r ($variable_name) Permite saber el tipo de dato de una variable de manera más fácil
+
+Funcion Function
+
+Function variable_name(parametro){
+        instruccion;
+}
+
+Permite crear y almacenar funciones en una variable
+
+variable_name(parametro); llama las funciones de la variable
+
+Sentencia Return
+
+return value_name; Permite guardar los resultado de una instruccion en
+una variable, se usa en las funciones y debe ser el último en la instruccion
+
+Funciones para Cadenas de Texto
+
+htmlspecilachars ($value); Permite usar caracteres especiales de php
+strtoupper ($value); Convierte una cadena de texto en mayúsculas
+strtolower ($value); Convierte una cadena de texto en minúscula
+
+Include y Require
+
+include 'direccion_archivo'; Permite unir hojas html y php
+require 'direccion_archivo'; Permite unir hojas html y php, pero al fallar la dirección no muestra ningún código de la página
+
+die() Permite que la instrucción deje de ejecutarse
+
+FORMULARIOS
+
+$_POST
+
+Arreglo donde se almacena los datos enviados a través del formulario method="post"
+
+$_GET
+
+Arreglo donde se almacena los datos enviados a través del formulario method="get"
+
+header('Location: Url'); Permite redireccionar al usuario a una url especifica.
+
+$_SERVER 
+
+Array que contiene información, tales como cabeceras, rutas y ubicaciones de script.
+
+$_SERVER['PHP_SELF']
+
+El nombre del archivo de script ejecutándose actualmente, relativa al directorio raíz de documentos del servidor.
+
+COMPROBAR SI FUE ENVIADO
+
+$_SERVER['REQUEST_METHOD']
+
+Permite comprobar y conocer el metodo de envió de la página.
+
+if (isset($_POST['submit'])){ //Code } comprueba si el botón submit a sido seteado y enviada la información.
+
+VALIDAR FORMULARIO
+
+$value_name = filter_var ($value_name, FILTER_SANITIZE_STRING); 
+
+Remueve los caracteres y simbolos de una cadena de texto
+
+filter_var ($value_name, FILTER_VALIDATE_EMAIL)
+
+Válida un correo electrónico
+
+ENVIAR FORMULARIO
+
+$enviar_a = ' email_name';
+
+Envia los datos del formulario al correo asignado
+
+$asunto = ' Correo enviado desde ...';
+
+Permite escribir un asunto para el correo a enviar
+
+$mensaje_preparado = "De : $nombre_value /n";
+$mensaje_preparado .= "Correo : $correo_value /n";
+$mensaje_preparado .= "Mensaje " . $mensaje;
+
+mail($enviar_a, $asunto, $mensaje_preparado);
+
+Funciones de Sesión
+
+session_start(); 
+crea una sesión o reanuda la actual basada en un identificador de sesión pasado mediante una petición GET o POST, o pasado mediante una cookie.
+
+$_SESSION['value'] = 'value_name';
+crea y almacena una variable y su nombre para ser usado en una sesion.
+
+session_destroy();
+ Destruye toda la información registrada de una sesión.
+ 
+ COOKIES
+ Las cookies son un mecanismo por el que se almacenan datos en el navegador remoto para monitorizar o identificar a los usuarios que vuelvan al sito web. 
+ 
+ setcookies(name, value, expire, path);
+ define una cookie para ser enviada junto con el resto de las cabeceras de HTTP.
+ 
+ name -> El nombre de la cookie.
+ value -> El valor de la cookie. Este valor se guarda en el computador del cliente; no almacene información sensible.
+ expire -> El tiempo en el que expira la cookie. time()+60*60*24*30 configurará la cookie para expirar en 30 días.
+ path -> La ruta dentro del servidor en la que la cookie estará gurdada. '/', la cookie estará disponible en la totalidad del domain. 
+ 
+ $_COOKIE['name'];
+ Array que permite una vez que han sido enviadas las cookies, acceder a ellas en la próxima carga de la página.
+ 
+ ARCHIVOS
+ 
+ file_exists('file_name');
+ Permite conocer si un archivo existe en nuestro directorio.
+ 
+ file_get_contents('file_name');
+ Muestra el contenido de nuestro archivo.
+ 
+ file_put_contents('file_name', 'new_content', FILE_APPEND);
+ Subscribe contenido en nuestro archivo. FILE_APPEND permite agregarlo al final de nuestro contenido existente.
+ 
+ RUTAS
+ 
+ pathinfo('file_name', constantes);
+ Permite conocer informacion de la ruta de un archivo según su constante.
+ 
+ pathinfo_basename -> Muestra el nombre del archivo y su extension.
+ pathinfo_dirname -> Muestra la ruta donde esta nuestro archivo.
+ pathinfo_extension -> Muestra la extension de nuestro archivo
+ pathinfo_filename -> Muestra el nombre del archivo.
+ 
+ glob('a*{.php, txt} GLOB_GRACE');
+ En un arreglo muestra todos los archivos con extension .php y que comiencen con la letra a.
+ 
+ basename('path');
+ Permite conocer el nombre del archivo que este en una ruta.
+ 
+ dirname('path');
+ Permite conocer la direccion de un archivo.
+
+
+var_dump($value_name) -> Imprime el tipo de variable y su valor.
+
+include 'file_path'; -> Incluye la ruta de un archivo Php, si no lo encuentra trata de continuar el proceso.
+include_one 'file_path'; -> Se asegura que la ruta de un archivo Php se utilice una vez.
+require 'file_path'; -> Incluye la ruta de un archivo Php, si no lo encuentra detiene el proceso.
+
+$name = value; ->  Crea variables y asocia un valor.
+define('_NAME', 'value'); -> Define variables globales.
+
+Conditional
+if(condition){ code } -> Crea condiciones if
+switch($value_name){case 'value': code break; default: code; } -> Ejecuta el codigo de un caso dependiendo la variable del switch.
+
+Loops
+for($i = 0; stop_condition;  i++){ code }; Ejecuta una instruccion hasta que se cumpla la condición de parada.
+foreach (array_name as $key => $array_value){ echo $key . $array_value} -> Recorre e imprime llaves y valores de un array.
+
+
+Arrays
+$array_name = [];  -> Crea un arreglo.
+$array_name = [value1,value2,value2];  -> Crea un arreglo con valores.
+$array_name['value_name'] = value; -> Asignar valores al arreglo.
+$array_name[] = [ 'value_name' => value, 'value_name1' => value1 ]; -> Agrupa variables en arreglos.
+$array_name['value_name'] = Imprime el valor asociado en la llave o posición del arreglo.
+
+Functions
+function name(){ code}; -> Crea funciones.
+name(); -> Invoca la función name.
+function name(parameters){return code} -> Crea funciones con parámetros.
+name(parameters) -> Invoca la función name especificando sus parametros.
+
+Session
+session_start(); -> Iniciar una nueva sesión o reanudar la existente.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
