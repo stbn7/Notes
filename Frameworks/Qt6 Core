@@ -86,6 +86,20 @@ file.write(contenido); Escribir informacion en un archivo.
 file.flush();
 file.close(); Cerrar un archivo
 
+Layout
+setGeometry(x, y, w, h); Posicionar elementos de manera absoluta.
+
+QVBoxLayout* vLayout = new QVBoxLayout(this); Instanciar layout Vertical.
+QHBoxLayout* vLayout = new QHBoxLayout(this); Instanciar layout Horizontal
+QFormLayout* formLayout = new QFormLayout(this); Instancias layout para el uso de formularios.
+QGridLayout *grid = new QGridLayout(this); Ubicar elementos en celdas
+
+Layout->addWidget(btn1); Agregar un widget a el layout.
+setLayout(vLayout); Establecer el layout a utilizar por un widget.
+vLayout->setSpacing(10); Declarar el espacio entre elementos dentro del layout.
+setLabelAlignment(Qt::AlignRight | Qt::AlignVCenter); Alinear el comportamiento de los elementos del formulario.
+setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding); Establecer el comportamiento del tamaño de los elementos del widget H y V.
+
 
 
 

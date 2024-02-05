@@ -5,6 +5,8 @@ git fetch: Traer actualizaciones del servidor remoto y guardarlas en nuestro rep
 git merge: Combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo
 git pull: Básicamente, git fetch y git merge al mismo tiempo
 git remote name url: Añadir repositorios remotos
+git init --bare
+git remote add name direccion : Agregar repositorio local
 .gitignore: *.jpg Ignorar archivos binarios
 
 git branch -M main

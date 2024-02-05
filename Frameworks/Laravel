@@ -1,9 +1,68 @@
 Laravel
-Php Framework 5.5
 
-https://ajgallego.gitbooks.io/laravel-5/content/base_de_datos_query_builder.html
+composer create-project laravel/laravel project_name : Crear proyecto
 
-https://www.youtube.com/watch?v=7YvBOOSqM8k&list=PL1r3w0C4ClYRbiTB4o70CyJEW6hUWJ39X
+
+Artisan
+php artisan serve : Iniciar el proyecto laravel en el servidor desde la consola.
+php artisan make:model name -m : Crear plantilla Model recibir o enviar la información a la base de datos.
+php artisan migrate : Ejecutar todas las migraciones disponibles.
+php artisan migrate:rollback : Deshacer la ultima migracion.
+php artisan make:controller nameController : Crear plantilla Model Unir vista con el modelo.
+
+Blade Templates
+@extends('template_name') : Referenciar plantilla con el @yield para su extención.
+@yield('section_name') : Encapsular contenido de una section html o css debe ir acompañado de @include.
+@section('name') -> @endsection : Invocar un bloque una sección de código.
+
+Routes
+routes/web.php -> Contienen las rutas de direccionamiento al controlador.
+Route::get('url', function(){return view('blade.template');}); : Retornar una vista
+Route::post('url',[controller::class, 'function(store)']); : Ejecutar el metodo del controlador.
+
+Directivas
+@csrf : Tokens helper de Blade que muestra el campo para proteger la aplicación de ataques CSRF para formularios.
+@method('function')
+
+Function
+
+public function store(Request $request){
+    $request->validate([
+        'value' => 'required|min:3'
+    ]);
+
+    $modelName = new ControllerName;
+    $modelName->title = $request->title;
+    $modelName->save();
+
+    return redirect()->route('view');
+
+}
+
+
+
+
+Folders
+app/ : Models, Controllers.
+database/ : Migraciones
+.env -> Configurar variables de entorno. Base de datos, Servidor de correo.
+
+
+
+
+
+
+
+
+
+
+
+
+Crear modelos, migraciones, controladores a través de artisan
+
+Model -> Se encarga de los datos, generalmente de la base de datos, pero podría ser un API, servicio web, sistema de archivos etc...
+View -> Son la representación visual de los datos, todo lo que tenga que ver con la interfaz gráfica.
+Controller -> Se encarga de controlar, recibe las órdenes del usuario y se encarga de solicitar los datos al modelo y de comunicárselo a la vista.  Actualización, consultas, búsquedas, modificaciones y validación de datos.
 
 Step
 1. Crear Base de Datos.
@@ -11,22 +70,53 @@ Step
 3. Crear los controladores que poseen los métodos create, store, show, edit, update, delete .
 4. Crear y asociar las Rutas con los controller, models.
 
-Folders
 
-app/ -> Se almacenan los modelos, el nombre de las tablas. 
+xxxxxxx
+Migraciones interactuar con base de datos ORM
+
+@include('section_name') -> Instancia la plantilla.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://ajgallego.gitbooks.io/laravel-5/content/base_de_datos_query_builder.html
+
+https://www.youtube.com/watch?v=7YvBOOSqM8k&list=PL1r3w0C4ClYRbiTB4o70CyJEW6hUWJ39X
+
+
+
+
 app/http/controller -> Almacena las plantillas de los controladores.
 config/database.php -> Configuracion del motor de base de datos al que deseamos conectarnos. 
 resources/views/ -> Se almacenan las vistas de las páginas web.
 public/ -> Almacena los recursos estáticos de nuestra aplicación, es decir, archivos css, js, imágenes y fuentes.
 routes/web.php -> Almacena las rutas y peticiones de la aplicación.
-.env -> Archivo ubicado en la raiz, permite configurar y conectar con la base de datos y la conexión con el servidor de correo.
+
 
 
 Laravel Install
 composer global require "laravel/installer" - > Instala el framework laravel por medio de composer.
 laravel new project_name  -> Crea un nuevo proyecto con todas las librerías de Laravel.
 composer create-project --prefer-dist laravel/laravel project_name "5.5.*" ->  Crea un nuevo proyecto con todas las librerías de Laravel a través de composer en la version 5.5.
-php artisan serve -> Inicia el proyecto laravel en el servidor desde la consola. 
 
 Permissions on Linux
 sudo chmod -R 777 /opt/lampp/htdocs/"project_name"/storage/ -> Otorga permisos a la carpeta storage
@@ -35,36 +125,12 @@ sudo chmod -R 777 /opt/lampp/htdocs/"project_name"/bootstrap/cache/ -> Otorga pe
 Shortcut
 $this->withoutExceptionHandling(); ->Muestra por consola los errores de ejecución de un método.
 
-Model -> Se encarga de los datos, generalmente de la base de datos, pero podría ser un API, servicio web, sistema de archivos etc...  
-View -> Son la representación visual de los datos, todo lo que tenga que ver con la interfaz gráfica.
-Controller -> Se encarga de controlar, recibe las órdenes del usuario y se encarga de solicitar los datos al modelo y de comunicárselo a la vista.  Actualización, consultas, búsquedas, modificaciones y validación de datos.
-
-
-
-Blade Templates
-@section('name') -> @endsection -> Encapsula en un bloque una sección de código.
-@include('section_name') -> Instancia la plantilla.
-@yield('section_name') -> Muestra el contenido del bloque de una section, debe ir acompañado de @include.
-@extends('template_name) -> Nombre de la plantilla que va contender el @yield para su extención.
-
-Model
-app/ -> Se almacenan los modelos, el nombre de las tablas.
-php artisan make:model model_name = Crea una plantilla Model dentro de la carpeta apps.
-recibir	o enviar la información	a la base de datos.
-El nombre de los modelos se escribe en singular, en contraste con las tablas de BD que se escribe en plural.
 
 Definición de Modelos
 protected $table = 'bd_name'; = Define el nombre de la base de datos.
 protected $primaryKey = 'id'; = Define el primer identificador de la tabla.
 protected $fillable = ['BD_id1','BD_id2']  = Define en un arreglo los nombres de las tablas de base de datos.
 
-Routes
-routes/web.php -> Contienen las rutas de direccionamiento al controlador.
-
-Route::view('url','blade.template') -> Al ir url, retorna una vista.
-Route::get('url','controller_name@method'); -> Al ir al url, ejecuta lo que hay en el metodo del controlador.
-Route::resource('user', 'UserController'); -> Accede a todos los métodos de un controlador.
-->where(['id' => '[0-9]+', 'name' => '[a-z]+']); -> Limita el uso de parámetros a números o carácteres en una Url con funciones.
 
 
 
@@ -85,8 +151,6 @@ https://desarrolloweb.com/articulos/query-builder-laravel5.html
 $value = DB::table('table_name')->first(); -> Obtiene el primer valor de una DB.
 echo $value -> DB_Value; -> Imprime el primer valor de una DB a través del método first().
 
-php artisan make:controller controller_name --resource = Crea una plantilla de Controller con metodos para los modelos dentro
-de la carpeta Controller.
 
 Eloquent
 
@@ -115,14 +179,7 @@ Model::destroy -> Destruye el registro por su id.
 Scopes -> Crea funciones que permiten realizar consultas especificas.
 public function scopeName($query){ return $query->where('sabor','vainilla');} -> FUncion que imprime todos los sabores de vainilla :v
 
-function store
-$
 
-ex. action="{{url('/url_o_user')}}"
-{{ csrf_field()}} -> Token que permite almacenar datos en store.
-
-$value_name=request()->all();  --> Almacena toda la información enviada por post en la variable.
-return response()->json($value_name);  --> Imprime los valores almacenados en la variable.
 
 
 

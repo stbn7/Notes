@@ -60,8 +60,18 @@ Library
 Math.floor(Math.random() * x) : Generar numero entero aleatorio hasta x-1
 
 DOM (Document Object Model)
-document.querySelector(value) : Obtener elementos segun su identificador # o .
-document.querySelectorAll(value) :  Obtener todos los elementos segun el Value
+document.querySelector(value) : Obtener elementos segun su identificador o clase
+document.querySelector('[data-form-btn]') : Obtener elementos segun su identificador data-attributes
+document.querySelectorAll(value) :  Obtener todos los elementos que tengan el mismo Valor
+
+event.prevenDefault() : Evitar el comportamiento patrón del formulario (actualizacion de pagina)
+const content = element.innerHTML : Reemplazar todo el contenido html de un elemento
+document.createElement("tagName") :
+
+Element
+element.classList.add("class1", "class2") : Agregar clases a un elemento
+element.addEventListener('event', function (){code}); : Asociar un metodo a un evento a un elemento
+
 
 
 

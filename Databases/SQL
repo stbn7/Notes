@@ -1,0 +1,103 @@
+SQL (Structured Query Language)
+
+Lenguaje unificado para definir, consultar, modificar y controlar los datos en una base de datos relacional.
+
+SHOW DATABASES; Mostrar bases de datos actuales en nuestro servidor.
+CREATE DATABASE db_name; Crear una nueva base de datos.
+DROP DATABASE db_name; Borrar base de datos.
+USE db_name; Seleccionar base de datos.
+CREATE TABLE tb_name (column1 datatype increment+1, column2 datatype(limit) Required, PRIMARY KEY() ...); Crear Tabla (ejemplo).
+DROP TABLE tb_name; Borrar tabla.
+INSERT INTO tb_name values('value1', 'value2'); Insertar registros en la tabla seleccionada.
+SHOW TABLES; Mostrar tablas de la base de datos.
+UPDATE tb_name SET update_value = 'new_value' WHERE change_value = value; Actualizar o editar registros de una tabla.
+DELETE FROM tb_name WHERE condition; Eliminar registros de la tabla.
+ALTER TABLE tb_name ADD PRIMARY KEY(value); Agregar llave primaria a un atributo.
+ALTER TABLE tb_name ADD COLUMN(value_name datatype); Agregar una columna a la tabla.
+ALTER TABLE tb_name RENAME tb_name; Renombrar una tabla.
+SELECT * FROM tb_name; Mostrar todos los valores de la tabla.
+SELECT value FROM tb_name; Mostrar valores de la tabla.
+SELECT * FROM tb_name LIMIT start, End; Filtrar registros de la tabla.
+SELECT * FROM tb_name  WHERE attribut = value; Filtrar registros por el valor.
+
+ALTER TABLE tb_name ADD CONSTRAINT FK_NAME FOREIGN KEY (value) REFERENCES tb_name(value); Relacionar tablas por medio de llave foranea.
+
+Command
+LIKE;
+DISTINCT;
+LIMIT;
+ORDER BY;
+
+START TRANSACTION;
+ROLLBACK;
+COMMIT;
+
+
+
+Examples
+
+DELETE FROM Customers WHERE Name='Alfreds Futterkiste'; Eliminar un registro
+SELECT * FROM tb_name WHERE Edad >= 18; Mostrar todos los registros donde la edad es mayor.
+SELECT * FROM tb_name WHERE Sabor='Mango' OR TAMANO='450 ml';
+
+CREATE TABLE tb_producto(
+CODIGO VARCHAR(10) NOT NULL,
+DESCRIPCION VARCHAR(100) NULL,
+SABOR VARCHAR(50) NULL,
+TAMANO VARCHAR(50) NULL,
+ENVASE VARCHAR(50) NULL,
+PRECIO_LISTA FLOAT NULL,
+PRIMARY KEY (CODIGO)
+);
+
+ALTER TABLE tb_venta ADD CONSTRAINT FK_CLIENTE
+FOREIGN KEY (DNI) REFERENCES tb_cliente(DNI);
+
+SELECT DNI, EDAD, FECHA_NACIMIENTO, timestampdiff(YEAR, FECHA_NACIMIENTO, NOW()) AS ANOS FROM tb_clientes; Calcular edad cliente
+
+
+DELIMITER //
+CREATE TRIGGER TG_FACTURACION_INSERT
+AFTER INSERT ON tb_items_facturas1
+FOR EACH ROW BEGIN
+  DELETE FROM tb_facturacion;
+  INSERT INTO tb_facturacion
+  SELECT A.FECHA, SUM(B.CANTIDAD * B.PRECIO) AS VENTA_TOTAL
+  FROM tb_factura1 A
+  INNER JOIN
+  tb_items_facturas1 B
+  ON A.NUMERO = B.NUMERO
+  GROUP BY A.FECHA;
+END //
+
+
+DELIMITER //
+CREATE TRIGGER TG_FACTURACION_DELETE
+AFTER DELETE ON tb_items_facturas1
+FOR EACH ROW BEGIN
+  DELETE FROM tb_facturacion;
+  INSERT INTO tb_facturacion
+  SELECT A.FECHA, SUM(B.CANTIDAD * B.PRECIO) AS VENTA_TOTAL
+  FROM tb_factura1 A
+  INNER JOIN
+  tb_items_facturas1 B
+  ON A.NUMERO = B.NUMERO
+  GROUP BY A.FECHA;
+END //
+
+DELIMITER //
+CREATE TRIGGER TG_FACTURACION_UPDATE
+AFTER UPDATE ON tb_items_facturas1
+FOR EACH ROW BEGIN
+  DELETE FROM tb_facturacion;
+  INSERT INTO tb_facturacion
+  SELECT A.FECHA, SUM(B.CANTIDAD * B.PRECIO) AS VENTA_TOTAL
+  FROM tb_factura1 A
+  INNER JOIN
+  tb_items_facturas1 B
+  ON A.NUMERO = B.NUMERO
+  GROUP BY A.FECHA;
+END //
+
+
+

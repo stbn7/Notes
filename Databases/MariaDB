@@ -1,124 +1,13 @@
 MariaDB
-Sistema de gestión de bases de datos derivado de MySQL con licencia GPL.
 
-https://drive.google.com/drive/folders/1WjKA9-AkEv46hLdde85TAt9o2UPbX5Kk
-http://localhost/phpmyadmin/
+mariadb -u [root/user] -p [pass] : Iniciar servidor de MariaDB
 
-Comandos de consola
+show databases; Mostrar bases de datos
+use db_name; Cambiar base de datos
+show tables; Mostrar tablas de una base de datos
 
-mysql -u root -p 
-Permite iniciar el entorno de MariaDB, donde root es el nombre de usuario.
-
-system uptime
-Permite usar los comandos de la consola del sistema operativo
-
-status
-Muestra información sobre el servidor de bases de datos y nuestra conexión.
-
-prompt
-Permite cambiar el prompt de mariaDB \u --> muestra el usuario
-
-show databases;
-Muestra las bases de datos actuales en nuestro servidor.
-
-create database name;
-Crea una base de datos, donde name es el nombre de la base de datos.
-
-drop database name;
-Permite borrar una basa de datos.
-
-CREATE USER 'username'@'localhost' IDENTIFIED BY 'password'
-Crea un usuario que se conecta desde la máquina local y le asignamos una contraseña
-
-use name_basedata;
-Permite acceder a la base de datos name_basedata.
-
-create table name (id INT AUTO_INCREMENT, nombre varchar(30) NOT NULL, PRIMARY KEY ())
-Permite crear tablas de tipo name. (value_name datatype increment+1, value_name(limit) Required, PRIMARY KEY())
-
-show tables;
-Muestra las tablas actuales en nuestra base de datos.
-
-describe table_name;
-Muestra los datos contenidos en nuestra tabla.
-
-insert into table_name values(null, 'value 1', 'value 2');
-Inserta datos en la tabla seleccionada.
-
-update table_name set change_value = 'new_value' where id = value;
-Permite actualizar o editar los datos de una tabla. Donde change_value es el valor donde está
-el dato a cambiar.
-
-select value from table_name;
-Muestra en pantalla los valores de la tabla que le asignemos a value.
-
-select * from table_name where value_name like 'letter%';
-Muestra todos los datos del valor asignado y los filtra por la letra escojida.
-
-select * from table_name where order by value_name asc/desc;
-Ordena todos los datos del valor asignado de forma ascendente o descendente.
-
-select * from table_name limit y, x;
-Muestra los datos y los limita. y es donde inicia a traer los de datos y x el numero de datos a traer.
-
-delete from table_name where id = value;
-Elimina datos del valor escojido.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+systemctl enable mariadb : Agregar servidor al arranque del sistema
+systemctl status mariadb : Mostrar estado del servidor
+systemctl start mariadb : Iniciar servidor
+systemctl stop mariadb : Detener servidor
 
