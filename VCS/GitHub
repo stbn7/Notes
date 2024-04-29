@@ -1,0 +1,15 @@
+Remote
+git clone url: Descargar archivos de la rama principal y todo el historial de cambios
+git push: envía a otro repositorio remoto lo que estamos haciendo
+git fetch: Traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local
+git merge: Combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo
+git pull: Básicamente, git fetch y git merge al mismo tiempo
+git remote name url: Añadir repositorios remotos
+git init --bare
+git remote add name direccion : Agregar repositorio local
+.gitignore: *.jpg Ignorar archivos binarios
+
+git branch -M main
+git remote add origin "url"
+git push origin rama
+git pull origin master --allow-unrelated-histories

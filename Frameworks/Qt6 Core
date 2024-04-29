@@ -1,0 +1,211 @@
+QT6
+Development
+
+Library
+#include <QDebug> Consola
+#include <QFile> Archivos
+#include <QTextStream>
+
+
+QString::number(x); Convierte un numero a String.
+qDebug() << "text"; Imprimir en consola
+
+
+Class
+QPushButton * objButton = new QPushButton(this); Instanciar una clase
+object.setObjectName("name"); Asignar un nombre a un objeto
+
+Interfaces
+class name{code}; Crear Interfaces usando encabezados
+virtual type name() = 0; Crear métodos virtuales
+class name: public QObject, public Interface1, public Interface2;  Agregar Interfaces en la clase principal
+
+
+
+Signals to Slots
+
+signals:
+emit signal(); Llama a una señal
+void name(); Crear signals, solo se definen en el .h
+void name(values); Crear signals con parametros
+
+
+public slots:
+void name(); Crear slot, debe tener implementacion en el cpp
+
+QObject::connect(&oSource, &Source::signal,&oDestination,&Destination::slot);
+
+String Notation
+connect(ui->horizontalSlider,SIGNAL(valueChanged(int)),
+                ui->progressBar,SLOT(setValue(int)));
+
+Functor Notation
+connect(ui->horizontalSlider,&QSlider::valueChanged,
+                ui->progressBar,&QProgressBar::setValue);
+
+Functor Lambda Notation
+connect(ui->horizontalSlider,&QSlider::valueChanged,[=](){
+                ui->progressBar->setValue(ui->horizontalSlider->value());});
+
+
+
+
+QResource
+Crear una plantilla Qt Resource file para agregar imagenes, videos al proyecto
+QPixmap name("location");
+setPixmap(name);
+
+QList
+Almacena elementos en una lista que proporciona un acceso rápido basado en índices e inserciones y eliminaciones basadas en índices.
+
+Qlist <Qstring> list; Declarar una lista.
+name << "value1" << "value2"; Agregar datos lista directamente.
+list.append(value); Agregar datos lista.
+list[0]; Obtener datos de una lista
+list.count(); Devuelve el tamaña de una lista.
+
+QVector<T>
+Proporciona una clase de plantilla de matriz dinámica.
+
+QVector<T> name; Una forma de inicializar un QVector.
+name << item1 << item2 << item3; Agregar items a un QVector.
+QVector<T> name {item1,item2,item3}; Agregar items a un Qvector de forma implicita.
+name[position]; Obtener un elemento del vector
+
+QVector<QString> name; Una forma de inicializar un QVector.
+name.append("item"); Agregar items a un QVector.
+
+QFile
+
+QFile file; Definir un objeto de tipo Archivo.
+QByteArray contenido = file.readAll(); Almacenar la informacion de un archivo.
+
+file.setFileName("/home/name.txt"); Definir ruta del archivo.
+file.open(QIODevice::WriteOnly | QIODevice::Text); Definir la forma que será abierto y tipo.
+file.write(contenido); Escribir informacion en un archivo.
+file.flush();
+file.close(); Cerrar un archivo
+
+Layout
+setGeometry(x, y, w, h); Posicionar elementos de manera absoluta.
+
+QVBoxLayout* vLayout = new QVBoxLayout(this); Instanciar layout Vertical.
+QHBoxLayout* vLayout = new QHBoxLayout(this); Instanciar layout Horizontal
+QFormLayout* formLayout = new QFormLayout(this); Instancias layout para el uso de formularios.
+QGridLayout *grid = new QGridLayout(this); Ubicar elementos en celdas
+
+Layout->addWidget(btn1); Agregar un widget a el layout.
+setLayout(vLayout); Establecer el layout a utilizar por un widget.
+vLayout->setSpacing(10); Declarar el espacio entre elementos dentro del layout.
+setLabelAlignment(Qt::AlignRight | Qt::AlignVCenter); Alinear el comportamiento de los elementos del formulario.
+setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding); Establecer el comportamiento del tamaño de los elementos del widget H y V.
+
+
+
+
+
+
+Modelos
+
+QAbstractItemModel: esto es lo suficientemente flexible para manejar vistas que presentan datos
+en forma de tablas, listas y árboles.
+QAbstractListModel: esta es una superclase de modelo más especializada optimizada para
+presentar datos en vistas de lista.
+QAbstractTableModel: esta es una superclase de modelo más especializada optimizada
+para presentar datos en vistas de tabla.
+
+Modelos listos para manejar elementos de datos:
+
+QStringListModel: se puede utilizar para almacenar una lista secuencial de cadenas.
+QStandardItemModel: esto se puede utilizar para almacenar elementos en un árbol arbitrario jerarquía.
+QFileSystemModel: se puede utilizar como modelo de datos en un sistema de archivos.
+QSqlQueryModel, QSqlTableModel y QSqlRelationalTableModel: estos
+se puede utilizar sobre una base de datos SQL.
+QDirModel
+
+Vistas
+
+QListView: muestra una lista secuencial de elementos.
+QTreeView: muestra una vista de árbol de los elementos en su jerarquía.
+QTableView: muestra una vista de tabla de elementos.
+
+Delagados
+
+QAbstractItemDelegate es la clase base abstracta para delegados en el marco de modelo/vista
+
+MVC model on Qt Creator
+
+List View
+Tree View
+Table View
+Column View
+Undo View
+
+SQLite
+
+
+
+Error
+QT += widgets -> error: QAplication no found
+install mesa-libGL-devel mesa-libGLU-devel -> error: cannot find -lGL
+
+
+
+
+
+Samples
+
+void counter::setValue(int newValue)
+{
+    myValue = newValue;
+    emit valueChanged(new value);
+}
+
+**Signal y Slot**
+
+QObject::connect(ui->signal, &QAction::triggered,
+            this, &MainWindow::slot); -> Conectar una señal a un slot
+
+
+
+
+
+
+Estructura
+
+Formularios (forms) -> extensión .ui
+Cabecera (headers) ->  extensión .h
+Fuente (sources) -> extensión .cpp
+Proyecto (project) -> extensión .pro
+Recursos (resource) -> extensión .qrc
+
+Compilar Proyecto
+
+qmake project.pro -> Crear fichero de configuracion del proyecto
+qmake -> Crear fichero make necesario para compilar proyecto
+make -> Ejecutar fichero make
+./project -> Ejecutar aplicacion
+
+
+
+
+
+//    QStringList header;
+//    header << "Icon" << "Name" << "Profile";
+//    ui->tableWidget->setColumnCount(3);
+//    ui->tableWidget->setHorizontalHeaderLabels(header);
+
+
+//    for(int i=0; i<list.size();i++)
+//    {
+//        ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+//        ui->tableWidget->setItem(ui->tableWidget->rowCount() -1 ,0, new QTableWidgetItem(QIcon::fromTheme("firefox"),"",1));
+//        ui->tableWidget->setItem(ui->tableWidget->rowCount() -1 ,1, new QTableWidgetItem(list.at(i)));
+//        ui->tableWidget->setItem(ui->tableWidget->rowCount() -1 ,2, new QTableWidgetItem(list.at(i)));
+
+//    }
+
+
+
+
+ 

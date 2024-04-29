@@ -1,0 +1,88 @@
+Git
+Sistema de Control de versiones
+
+git init: Inicializar el repositorio git y el staged
+git add file.txt: Enviar el archivo al Staged
+git status: Ver cambios
+git commit -m “Mensaje”: Agregar cambios al repositorio local
+git log file.txt: Histórico de cambios con detalles
+
+git checkout commit_id: Mover entre ramas
+git checkout id file.txt: volver a la última versión de la que se ha hecho commit.
+git checkout -b rama: Generar una rama y nos mueve a ella automáticamente.v
+
+
+git branch name: Crear ramas
+git merge rama: Crear un nuevo commit con la combinación de dos ramas o branches
+git push origin rama: Publicar una rama en el repositorio remoto
+git merge --abort: Cancelar un merge
+git stash: Guardar trabajo actual del Staging en una lista temporal (Stash)
+git stash pop: Sacar el ultimo elemento de Stash1
+
+git reset --soft commit_id: Eliminar los cambios hasta el Staging Area
+git reset --mixed commit_id: Eliminar los cambios hasta el Working Area
+git reset --hard commit_id: Regresar hasta el commit del ID
+
+git log --oneline:Te muestra el id commit y el título del commit.
+git log --decorate: Te muestra donde se encuentra el head point en el log.
+git log --stat: Explica el número de líneas que se cambiaron brevemente.
+git log -p: Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.
+git shortlog: Indica que commits ha realizado un usuario, mostrando el usuario y el título de sus commits.
+git log --graph --oneline --decorate y
+git log --pretty=format:"%cn hizo un commit %h el dia %cd": Muestra mensajes personalizados de los commits.
+git log -3: Limitamos el número de commits.
+git log --after=“2018-1-2”
+git log --after=“today” y
+git log --after=“2018-1-2” --before=“today”: Commits para localizar por fechas.
+git log --author=“Name Author”: Commits hechos por autor que cumplan exactamente con el nombre.
+git log --grep=“INVIE”: Busca los commits que cumplan tal cual está escrito entre las comillas.
+git log --grep=“INVIE” –i: Busca los commits que cumplan sin importar mayúsculas o minúsculas.
+git log – index.html: Busca los commits en un archivo en específico.
+git log -S “Por contenido”: Buscar los commits con el contenido dentro del archivo.
+git log > log.txt: guardar los logs en un archivo txt
+
+
+Config
+git config -l Para ver las posibles configuraciones.
+git config --list Ver la lista de configuraciones hechas.
+git config --list --show-origin Mostrar las configuraciones y sus rutas.
+git rm --cached file.txt Eliminar archivo del staged (ram).
+git rm file.txt Eliminar del repositorio.
+git remote -v: Listar direcciones remotas
+git remote set-url origin url: Cambiar direcciones remotas
+git config --global user.email "tu@email.com": Configurar email global
+git config --global user.name "Tu Nombre": Configurar nombre global
+git config --global safe.directory '*' : Solucionar error detected dubious ownership in repository
+
+Tags
+
+git tag -a name id_commit: Crear un nuevo tag y asignarlo a un commit
+git tag -d name: Borrar un tag en el repositorio local
+git tag o git show-ref --tags: Listar los tags de nuestro repositorio local
+git push origin --tags: Subir tag en el repositorio remoto
+git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag: Borrar tag del repositorio remoto
+
+
+Conexion SSH
+
+ssh-keygen -t rsa -b 4096 -C "email@example.com": Crear llave publica y privada
+eval $(ssh-agent -s): Verificar que el servicio ssh esta ejecutandose
+ssh-add key_path: Agregar llaves privada al entorno local
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

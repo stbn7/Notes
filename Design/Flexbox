@@ -1,0 +1,28 @@
+Flexbox
+Guide
+
+Necesita un contenedor padre y todo lo que contenga son  elementos hijo.
+Debe especificar al contenedor un height y un width.
+
+
+Container
+
+display: flex | inline-flex
+
+flex-direction: row | row-reverse --> Muestra los elementos en fila.
+flex-direction: column  | column-reverse --> Muestra los elementos en columnas.
+flex-wrap: wrap | nowrap | wrap-reverse --> Posiciona los elementos, no-wrap modifica el ancho para posicionar todos los elementos en una sola linea, wrap respeta el ancho del elemento.
+flex-flow: flex-direction | flex-wrap --> Atajo que recibe los valores de flex-direction y flex-wrap.
+justify-content: flex-start | flex-end | center | space-around | space-between | space-evenly --> Posiciona y distribuye los elementos en el eje x.
+align-items: flex-start | flex-end | center | stretch | baseline --> Posiciona y distribuye los elementos de una fila en el eje y.
+align-content: flex-start | flex-end | center | stretch | baseline --> Posiciona y distribuye grupos de elementos en el eje y.
+
+
+Element 
+
+flex-grow: value --> Indicamos el crecimiento de un elemento en proporcion a sus elementos hermanos.
+flex-shrink: value --> Indicamos el decrecimiento de un elemento en proporcion a sus elementos hermanos.
+flex-basis: value --> Sirva para declarar un tamaño fijo a cada elemento correspondiente a su eje principal. x o y
+flex: flex-grow | flex-shrink | flex-basis --> Atajo que recibe los valores flex-grow, flex-shrink y flex-basis.
+align-self: flex-start | flex-end | center | stretch | baseline --> Ordena un elemento.
+order: value --> Ordena los elementos según el valor asignado.

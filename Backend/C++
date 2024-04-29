@@ -1,0 +1,110 @@
+C++
+Languaje Programing
+
+https://es.cppreference.com/w/cpp/container/vector
+
+// comment -> comentarios de una sola linea
+/* comments */ -> Crea comentarios multilinea.
+
+Library
+#include <iostream>   -> Proveé funciones como  flujo de entradas y salidas.
+#include <string> -> 
+#include <cmath> -> Proporciona una colección de funciones que permite realizar cálculos matemáticos comunes.
+#include <vector> -> 
+#include <fstream> -> Permite manejar archivos.
+
+Tipos de Variables
+int -> Integer -> Enteros
+char -> Character Caracter
+float -> Float -> Reales
+double -> Double -> Reales
+bool -> Boolean -> Lógicos 
+
+const name value; -> Define valores constantes que no se pueden modificar.
+
+Secuencias de Escape
+\t -> Tabular.
+\n -> Salto de linea.
+<< -> Operador de insercción
+
+Operadores
+sizeof(value) -> Imprime el valor de a variable en byte
+unsigned type-> Sin signo, define a un numero entero sin valores negativos.
+
+getline( cin, value); -> Leé todas las palabras contenidas en un string.
+
+Condicionales
+if (condition){ true } else {false} -> Estructura de control, que ejecuta una instrucción dependiendo del resultado de la evaluación.
+switch(value){ case:1 break; case:2 break; default:} -> Ejecuta una condición segun el valor.
+
+while(condition){}  -> Repite un bloque de instrucciones, mientras se cumpla la condición.
+do{}while(condition); -> Repite el bloque de instrucciones, mientras se cumpla la condición.
+
+Ciclos
+for(int i=0 ; value<i ; i++){} -> Ejecuta un bloque de instrucciones hasta que se cumpla una condicion.
+
+Clase
+Una clase es un modelo que se utiliza para crear objetos que comparten un mismo
+comportamiento, estado e identidad.
+
+type name_function (type name ) -> 
+class name { };  -> Define clases. Termina con punto y coma.
+
+name (type value1, type value2); -> Define un constructor
+
+
+Modificadores:
+const -> Asigna un valor inmutable a una variable.
+
+Especificadores de acceso
+public:  ->   Permite el acceso a todos.
+private: ->
+
+Array
+type name [n]; -> Definir arreglos de n posiciones.
+type name [ ] = { 1, 2, 3, 4, 5}; -> Asignar valores a un arreglo.
+name[n]; -> Acceder a la posición n de un arreglo.
+
+void setValue_name(type value_name); -> Estructura del método Set.
+type getValue_Name(); -> Estructura del método Get.
+
+Vector
+name_vector.push_back(vector);
+
+Punteros
+& -> Operador de referencia, obtener la direccion de un variable u objeto.
+* -> Puntero, apunta y almacena la direccion de una variable u objeto.
+
+Si tenemos un objeto A, para invocar una función f() de este objeto escribimos A.f()
+Si A es un PUNTERO que apunta a un objeto X, su función f() se invocaría escribiendo A->f().
+
+
+Herencia
+Mecanismo básico por el que las clases hijas heredan el código de las clases padre. 
+
+
+Arboles
+Recorrido de arboles
+Preorden -> Root, Left and Right
+Inorden -> Left, Root and Reight
+Postorden -> Left, Right and Root
+
+
+
+fstream
+ofstream file; -> Instanciar un archivo de tipo stream. Salida.
+fila.open(path); -> Abrir archivo para su lectura 
+file.fail(): -> Verificar si el archivo existe
+file.close(); -> Cerrar un archivo
+ifstream fila; -> Instanciar un archivo de tipo stream. Entrada.
+file.eof(); -> Verificar que se a llegado al final der archivo. end-of-file
+
+http://ingeliomar.webcindario.com/guialista.pdf
+https://www.cs.usfca.edu/~galles/visualization/AVLtree.html   -> Simulaciones arboles avl drista
+
+
+
+
+
+
+ 

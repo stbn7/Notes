@@ -1,0 +1,149 @@
+JavaScript
+Languaje Programing
+
+// : Comentario de una sola linea
+/* comment */ : Comentario multilinea
+` string ${} ` : Crear plantillas de cadena
+alert() --> Muestra un mensaje de alerta por el navegador.
+
+
+console.log("mensaje") : Enviar y mostrar un mensaje por la consola del navegador
+
+var name = value; Crea variables y les asigna un espacio en memoria
+let name  = value; Crea variables y les asigna un espacio en memoria
+const name = value; Crea variables constantes
+
+String
+string.length : Mostrar la longitud de una cadena.
+
+Ciclos
+for(let i=0; i<10; i++){code} : Repetir una secuencia de codigo conociendo el numero de iteraciones
+while(condition){code} : Repetir una secuencia de codigo
+do{code}while(condition) : Repetir una secuencia de codigo por lo menos una vez
+condition ? true : false : Operador Ternario.
+
+Array
+let array_name = [value1, value2] : Crear arreglos
+array_name[0] : Acceder a la primera posición de un arreglo
+array_name.length : Mostrar la cantidad de elementos de un arreglo
+array_name.push(new_value) : Agregar nuevos valores al final de un arreglo
+array_name.unshift(new_value) : Agregar nuevos valores al inicio de un arreglo
+array_name.pop() : Eliminar el último valor de un arreglo
+array_name.shift() :  Eliminar el primer valor de un elemento
+
+
+Function
+function name(parameters){code return} : Almacenar bloques de código para luego ser utilizado
+function name(...name){code return} : Almacenar bloques de código para luego ser utilizado
+const name = (parameters) => code : Crear funciones flecha
+
+Clases
+class class_name{ constructor(parameters){ this.parameters = parameter } methods} --> Crea una clase con propiedades y metodos
+const name = new class_name(Parameters) --> Crea o instancia objetos a partir de una clase
+class class_name extends heredar_clase { constructor(parameters){super(heredar) this.new_parameters } new_methods} --> Herada propiedades y metodos a un nuevo objeto
+
+Objects
+let object = { "attribute": value, } : Crear un objeto
+object.attribute = value : Agregar un valor a un atributo del objeto
+object.attribute : Obtener el valor de un atributo
+object["attribute"] : Obtener el valor de un atributo
+delete object.attribute : Eliminar un atributo de un objeto
+const {"attribute","attribute"} = object : Obtener valores de un objeto
+const {value: {"attribute": value,"attribute": value}} = object : Obtener valores de un objeto anidado
+const name = ({attribute,attribute}) => {} = Descomponer un objeto
+name = (attribute, attribute) => ({attribute, attribute}) : Crear objetos directamente
+
+object.hasOwnProperty("attribute") : Verifica si un atributo hace parte de un objeto
+Object.freeze(object) : Congelar los atributos de los objetos
+
+Library
+Math.floor(Math.random() * x) : Generar numero entero aleatorio hasta x-1
+
+DOM (Document Object Model)
+document.querySelector(value) : Obtener elementos segun su identificador o clase
+document.querySelector('[data-form-btn]') : Obtener elementos segun su identificador data-attributes
+document.querySelectorAll(value) :  Obtener todos los elementos que tengan el mismo Valor
+
+event.prevenDefault() : Evitar el comportamiento patrón del formulario (actualizacion de pagina)
+const content = element.innerHTML : Reemplazar todo el contenido html de un elemento
+document.createElement("tagName") :
+
+Element
+element.classList.add("class1", "class2") : Agregar clases a un elemento
+element.addEventListener('event', function (){code}); : Asociar un metodo a un evento a un elemento
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oldes
+
+
+
+console.dir() --> Envia la informacion de un objeto.
+prompt() --> Dialogo que pide un dato y lo toma como un string.
+typeof --> Permite saber el tipo de dato.
+
+
+
+
+string.trim() --> Quita los espacios del final e inicio de un string.
+string.toUpperCase() --> Cambia el string en mayúsculas.
+string.toLowerCase() --> Cambia el string en minúsculas.
+string.indexOf('char', position) --> Busca char o string en cadenas de texto desde una posición.
+string.replace('char', 'char') --> Reemplaza un char o string por otro. 
+string.split('', length) --> Convierte un string en un array y define el tamaño del array.
+string.starsWith('char') --> Busca si un string empieza con un char.
+string.endsWith('char') --> Busca si un string termina con un char.
+string.includes('char') --> Busca si una cadena de texto incluye un char o string.
+
+
+for (let value_name of array_name){ console.log (value_name)} --> Ciclo for or, recorre facilmente un array
+
+
+array_name.join(x) --> Convierte un array en string y los separa segun lo especificamos (x)
+array_name.splice(p, n, e) --> Elimina elementos de un array especificamos la posicion, el numero de elementos a borrar y los nuevos elementos a agregar.
+array_new = array_name.slice(p, n) --> Crea un nuevo array duplicando elementos de un array especificamos la posicion y el numero de elementos a copiar.
+array_name.sort() --> Organiza alfabáticamente un arreglo.
+array_name.reverse() --> Organiza los valores en orden inverso.
+
+
+
+
+value in object_name --> Busca si un valor este dentro de un objeto.
+object_new = Object.assign ({},object_name) --> Copia un objeto.
+array_new = array_name.map(value => value_name.get_value ) --> Obtiene valores de un array o un objeto.
+array_new = array_name.filter(value => value_name.get_value condition) --> Filtra valores de un array o un objeto según una condicion.
+
+value = (function_name (parameters) { code return})(arrgument); --> Crea funciones invocadas
+
+
+
+
+

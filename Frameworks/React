@@ -1,0 +1,36 @@
+React
+Biblioteca de JavaScript para construir interfaces de usuario
+
+npx create-react-app name : Crear proyecto
+npm start : Iniciar proyecto en servidor local
+
+Components
+function name(props){return(code);} : Crear componentes de funcion.
+function name({attribut}){return(code);} : Crear componentes.
+export default component : Exportar un componente
+
+<Componente attribut='' attribut=''/> : Agregar props una etiqueta html.
+
+Hooks
+const [value,setValue] = useState(inicialValue) : Declarar una variable de estado.
+setValue(code) : Asignar un valor a value
+
+Images
+import name from 'path' : Importar imagen por variable.
+src={require(`path${props}`)} : Obtener imagen por ruta.
+
+EventListener
+onClick = {function} : Ejecutar una funcion cuando ocurra un click
+
+
+Library
+import { useState } from 'react' : Importar la funcion useState de Hooks
+
+
+Estructura
+
+src/
+ components/
+ images/
+ stylesheets/
+

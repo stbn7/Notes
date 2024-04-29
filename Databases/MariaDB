@@ -1,0 +1,13 @@
+MariaDB
+
+mariadb -u [root/user] -p [pass] : Iniciar servidor de MariaDB
+
+show databases; Mostrar bases de datos
+use db_name; Cambiar base de datos
+show tables; Mostrar tablas de una base de datos
+
+systemctl enable mariadb : Agregar servidor al arranque del sistema
+systemctl status mariadb : Mostrar estado del servidor
+systemctl start mariadb : Iniciar servidor
+systemctl stop mariadb : Detener servidor
+

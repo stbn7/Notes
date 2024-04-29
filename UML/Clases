@@ -1,0 +1,53 @@
+UML
+Lenguaje de Modelado Unificado
+
+Habilidad de abstraer y representar en un modelo problemas o soluciones que se puedan interpretar de una unica manera.
+
+Observar, Abstraer y Representar
+
+Diagramas de Clase
+
+Clases
+Cuadrado que contiene el nombre de la clase, en la parte superior la Visibilidad, el nombre del atributo y su tipo; en la parte inferior sus metodos con la Visibilidad, el nombre del metodo y el tipo de retorno
+
+Objetos
+Cuadrado con las esquinas redondeadas, con la etiqueta nombreObjeto:nombreClase y la definicion de sus atributos
+
+Enumeraciones
+Cuadrado que contiene la etiqueta <<Enumeration>>, el nombre en CamelCase e ir ubicado a un lado de la Clase, los elementos en Mayusculas y separados por guión bajo.
+
+Visibilidad
+Simbolo de menos: Representa un atributo Privado
+Simbolo de más: Representa un atributo Público
+
+Asociaciones
+Representa las relaciones entre distintas clases
+
+Asociacion Simple: Linea que une dos clases, contiene en el centro la relacion (triangulo relleno) y el tipo de rol de asociacion en los extremos (CamelCase) , la cardinalidad y la navegabilidad
+
+Collection<Estudiantes> estudiantesInscritos
+
+Cardinalidad
+Representa cuántas instancias de cada clase puede haber en una relación. 0..1, 1, 1..*, *
+
+Navegabilidad
+Determina si las instancia puede acceder entre si
+
+.
+Pregunta 5
+
+Una fábrica manufactura productos por lotes y, también, administra exclusivamente tiendas que venden sus productos. De acuerdo con las políticas de producción, la fábrica debe contar siempre con al menos un lote fabricado, aunque puede tener más, y cada tienda sólo recibe un lote de productos a la vez, debiendo siempre tener uno dentro de sus existencias. Basado en el enunciado, ¿qué diagrama UML de clases  modela con mayor precisión las clases y asociaciones de la situación anterior?
+
+
+Se quiere modelar que un comité tiene varios miembros y que uno de esos miembros es el director. Un comité necesita al menos 1 miembro y 1 director; y tanto miembros como director sólo pueden hacer parte de un comité. ¿Cuál de los siguientes diagramas de clase modela explícitamente la relación expresada en el enunciado?
+
+
+
+
+
+
+
+
+
+
+ 
