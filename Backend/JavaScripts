@@ -56,92 +56,30 @@ name = (attribute, attribute) => ({attribute, attribute}) : Crear objetos direct
 object.hasOwnProperty("attribute") : Verifica si un atributo hace parte de un objeto
 Object.freeze(object) : Congelar los atributos de los objetos
 
-Library
-Math.floor(Math.random() * x) : Generar numero entero aleatorio hasta x-1
 
 DOM (Document Object Model)
+document.body.appendChild(element) : Insertar elemento al DOM
 document.querySelector(value) : Obtener elementos segun su identificador o clase
 document.querySelector('[data-form-btn]') : Obtener elementos segun su identificador data-attributes
 document.querySelectorAll(value) :  Obtener todos los elementos que tengan el mismo Valor
 
 event.prevenDefault() : Evitar el comportamiento patrón del formulario (actualizacion de pagina)
 const content = element.innerHTML : Reemplazar todo el contenido html de un elemento
-document.createElement("tagName") :
+document.createElement("tagName") : Crear elemento
 
 Element
 element.classList.add("class1", "class2") : Agregar clases a un elemento
 element.addEventListener('event', function (){code}); : Asociar un metodo a un evento a un elemento
+element.innerText = "" : Obtener o establecer el texto visible de un elemento HTML.
+element.setAttribute('attribute','value') : Asignar atributo y un valor a un elemento.
 
+JSON
+JSON.parse() : Convertir Json a JavaScript Object
+JSON.stringify() : Convertir JavaScript Object a Json
 
+Library
+Math.floor(Math.random() * x) : Generar numero entero aleatorio hasta x-1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Oldes
-
-
-
-console.dir() --> Envia la informacion de un objeto.
-prompt() --> Dialogo que pide un dato y lo toma como un string.
-typeof --> Permite saber el tipo de dato.
-
-
-
-
-string.trim() --> Quita los espacios del final e inicio de un string.
-string.toUpperCase() --> Cambia el string en mayúsculas.
-string.toLowerCase() --> Cambia el string en minúsculas.
-string.indexOf('char', position) --> Busca char o string en cadenas de texto desde una posición.
-string.replace('char', 'char') --> Reemplaza un char o string por otro. 
-string.split('', length) --> Convierte un string en un array y define el tamaño del array.
-string.starsWith('char') --> Busca si un string empieza con un char.
-string.endsWith('char') --> Busca si un string termina con un char.
-string.includes('char') --> Busca si una cadena de texto incluye un char o string.
-
-
-for (let value_name of array_name){ console.log (value_name)} --> Ciclo for or, recorre facilmente un array
-
-
-array_name.join(x) --> Convierte un array en string y los separa segun lo especificamos (x)
-array_name.splice(p, n, e) --> Elimina elementos de un array especificamos la posicion, el numero de elementos a borrar y los nuevos elementos a agregar.
-array_new = array_name.slice(p, n) --> Crea un nuevo array duplicando elementos de un array especificamos la posicion y el numero de elementos a copiar.
-array_name.sort() --> Organiza alfabáticamente un arreglo.
-array_name.reverse() --> Organiza los valores en orden inverso.
-
-
-
-
-value in object_name --> Busca si un valor este dentro de un objeto.
-object_new = Object.assign ({},object_name) --> Copia un objeto.
-array_new = array_name.map(value => value_name.get_value ) --> Obtiene valores de un array o un objeto.
-array_new = array_name.filter(value => value_name.get_value condition) --> Filtra valores de un array o un objeto según una condicion.
-
-value = (function_name (parameters) { code return})(arrgument); --> Crea funciones invocadas
 
 
 

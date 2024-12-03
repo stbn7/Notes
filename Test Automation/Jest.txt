@@ -1,0 +1,4 @@
+
+test('description', () => {
+    expect(function(value).toBe(result));
+})

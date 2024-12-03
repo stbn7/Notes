@@ -1,2 +1,4 @@
 # Notes
-Lista de apuntes Desarrollo Web ver1
+
+Apuntes Desarrollo de Software version 0.2
+

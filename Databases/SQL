@@ -2,9 +2,10 @@ SQL (Structured Query Language)
 
 Lenguaje unificado para definir, consultar, modificar y controlar los datos en una base de datos relacional.
 
-SHOW DATABASES; Mostrar bases de datos actuales en nuestro servidor.
-CREATE DATABASE db_name; Crear una nueva base de datos.
-DROP DATABASE db_name; Borrar base de datos.
+show databases : Mostrar bases de datos actuales en nuestro servidor.
+create database db_name; Crear una nueva base de datos.
+drop database db_name; Borrar base de datos.
+
 USE db_name; Seleccionar base de datos.
 CREATE TABLE tb_name (column1 datatype increment+1, column2 datatype(limit) Required, PRIMARY KEY() ...); Crear Tabla (ejemplo).
 DROP TABLE tb_name; Borrar tabla.

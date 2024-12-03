@@ -4,6 +4,8 @@ Biblioteca de JavaScript para construir interfaces de usuario
 npx create-react-app name : Crear proyecto
 npm start : Iniciar proyecto en servidor local
 
+Sintaxis del estandar ECMA
+
 Components
 function name(props){return(code);} : Crear componentes de funcion.
 function name({attribut}){return(code);} : Crear componentes.

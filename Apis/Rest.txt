@@ -1,0 +1,13 @@
+Representationak State Transfer
+
+Definida por primera vez en 2000 por el científico informático Dr. Roy Fielding en su disertación doctoral, REST proporciona un nivel relativamente alto de flexibilidad, escalabilidad y eficiencia para los desarrolladores.
+
+proporcionan una forma flexible y ligera de integrar aplicaciones y conectar componentes en arquitecturas de microservicios.
+
+
+Metodos:
+    GET: Consultar información sobre uno o varios datos.
+    POST: Insertar datos.
+    PUT: Modificar datos.
+    PATCH: Modificar informacion parcial en un recurso.
+    DELETE: Eliminar un recurso.

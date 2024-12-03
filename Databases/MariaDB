@@ -1,10 +1,9 @@
 MariaDB
 
-mariadb -u [root/user] -p [pass] : Iniciar servidor de MariaDB
+create user 'user'@'localhost' identified by 'password'; Crear usuario
+grant all privileges on * . * to 'user'@'localhost'; Agregar todos los permisos.
 
-show databases; Mostrar bases de datos
-use db_name; Cambiar base de datos
-show tables; Mostrar tablas de una base de datos
+mariadb -u [root/user] -p [pass] : Iniciar servidor de MariaDB
 
 systemctl enable mariadb : Agregar servidor al arranque del sistema
 systemctl status mariadb : Mostrar estado del servidor

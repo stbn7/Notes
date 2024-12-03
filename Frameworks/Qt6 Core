@@ -1,12 +1,7 @@
 QT6
 Development
 
-Library
-#include <QDebug> Consola
-#include <QFile> Archivos
-#include <QTextStream>
-
-
+Function
 QString::number(x); Convierte un numero a String.
 qDebug() << "text"; Imprimir en consola
 
@@ -47,13 +42,13 @@ Functor Lambda Notation
 connect(ui->horizontalSlider,&QSlider::valueChanged,[=](){
                 ui->progressBar->setValue(ui->horizontalSlider->value());});
 
-
-
-
 QResource
 Crear una plantilla Qt Resource file para agregar imagenes, videos al proyecto
 QPixmap name("location");
 setPixmap(name);
+
+QSetting
+
 
 QList
 Almacena elementos en una lista que proporciona un acceso rápido basado en índices e inserciones y eliminaciones basadas en índices.
@@ -76,10 +71,8 @@ QVector<QString> name; Una forma de inicializar un QVector.
 name.append("item"); Agregar items a un QVector.
 
 QFile
-
 QFile file; Definir un objeto de tipo Archivo.
 QByteArray contenido = file.readAll(); Almacenar la informacion de un archivo.
-
 file.setFileName("/home/name.txt"); Definir ruta del archivo.
 file.open(QIODevice::WriteOnly | QIODevice::Text); Definir la forma que será abierto y tipo.
 file.write(contenido); Escribir informacion en un archivo.
@@ -101,76 +94,6 @@ setLabelAlignment(Qt::AlignRight | Qt::AlignVCenter); Alinear el comportamiento 
 setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding); Establecer el comportamiento del tamaño de los elementos del widget H y V.
 
 
-
-
-
-
-Modelos
-
-QAbstractItemModel: esto es lo suficientemente flexible para manejar vistas que presentan datos
-en forma de tablas, listas y árboles.
-QAbstractListModel: esta es una superclase de modelo más especializada optimizada para
-presentar datos en vistas de lista.
-QAbstractTableModel: esta es una superclase de modelo más especializada optimizada
-para presentar datos en vistas de tabla.
-
-Modelos listos para manejar elementos de datos:
-
-QStringListModel: se puede utilizar para almacenar una lista secuencial de cadenas.
-QStandardItemModel: esto se puede utilizar para almacenar elementos en un árbol arbitrario jerarquía.
-QFileSystemModel: se puede utilizar como modelo de datos en un sistema de archivos.
-QSqlQueryModel, QSqlTableModel y QSqlRelationalTableModel: estos
-se puede utilizar sobre una base de datos SQL.
-QDirModel
-
-Vistas
-
-QListView: muestra una lista secuencial de elementos.
-QTreeView: muestra una vista de árbol de los elementos en su jerarquía.
-QTableView: muestra una vista de tabla de elementos.
-
-Delagados
-
-QAbstractItemDelegate es la clase base abstracta para delegados en el marco de modelo/vista
-
-MVC model on Qt Creator
-
-List View
-Tree View
-Table View
-Column View
-Undo View
-
-SQLite
-
-
-
-Error
-QT += widgets -> error: QAplication no found
-install mesa-libGL-devel mesa-libGLU-devel -> error: cannot find -lGL
-
-
-
-
-
-Samples
-
-void counter::setValue(int newValue)
-{
-    myValue = newValue;
-    emit valueChanged(new value);
-}
-
-**Signal y Slot**
-
-QObject::connect(ui->signal, &QAction::triggered,
-            this, &MainWindow::slot); -> Conectar una señal a un slot
-
-
-
-
-
-
 Estructura
 
 Formularios (forms) -> extensión .ui
@@ -185,26 +108,6 @@ qmake project.pro -> Crear fichero de configuracion del proyecto
 qmake -> Crear fichero make necesario para compilar proyecto
 make -> Ejecutar fichero make
 ./project -> Ejecutar aplicacion
-
-
-
-
-
-//    QStringList header;
-//    header << "Icon" << "Name" << "Profile";
-//    ui->tableWidget->setColumnCount(3);
-//    ui->tableWidget->setHorizontalHeaderLabels(header);
-
-
-//    for(int i=0; i<list.size();i++)
-//    {
-//        ui->tableWidget->insertRow(ui->tableWidget->rowCount());
-//        ui->tableWidget->setItem(ui->tableWidget->rowCount() -1 ,0, new QTableWidgetItem(QIcon::fromTheme("firefox"),"",1));
-//        ui->tableWidget->setItem(ui->tableWidget->rowCount() -1 ,1, new QTableWidgetItem(list.at(i)));
-//        ui->tableWidget->setItem(ui->tableWidget->rowCount() -1 ,2, new QTableWidgetItem(list.at(i)));
-
-//    }
-
 
 
 

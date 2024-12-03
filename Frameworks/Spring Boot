@@ -1,0 +1,79 @@
+Spring Boot
+Framework de desarrollo de aplicaciones web y microservicios basado en Java.
+
+
+Spring Initializr : Generar configuraciones iniciales del proyecto. https://start.spring.io/
+Dependencies : MariaDB Driver, Spring WEB, Spring Data JPA, Spring Security
+
+src/main/resources/application.properties : Configurar conexion base de datos.
+spring.datasource.url=jdbc:mysql://localhost:3306/db_name
+spring.datasource.username=dbuser
+spring.datasource.password=dbpass
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect
+spring.jpa.hibernate.ddl-auto=update
+
+
+Entity (Class)
+
+@Entity : Representar objeto en una tabla de base de datos, los atributos corresponden a las columnas.
+
+@Table(name = "table_name") :  Nombrar tabla en base de datos.
+
+@AttributName : Agregar llave primaria a partir de un atributo.
+@GeneratedValue(strategy = GenerationType.IDENTITY) : Incrementar llave primaria automaticamente.
+@Column(name = "column_name") : Nombrar columna en base de datos.
+
+
+Repository (Interface) : Proporcionar una serie de métodos de alto nivel para realizar operaciones CRUD (crear, leer, actualizar y eliminar) en entidades de base de datos.
+
+public interface IdentityRepository extends JpaRepository<Identity,Type (keyPrimary)>
+
+
+Services (Class) : Implementacion CRUD
+
+@Service :  Indicar que una clase es un componente de servicio.
+private IdentityRepository identityRepository : Instanciar interfaz repositorio.
+public IdentityService(IdentityRepository identityRepository){this.identityRepository = identityRepository;}
+
+Create
+public Indentity create(Indentity indentity){return identityRepository.save(indentity)}
+
+
+Structure
+java/name.project/entities
+java/name.project/repository
+java/name.project/services
+
+java/name.project/controllers
+
+
+
+@RestController
+@GetMapping("route")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
